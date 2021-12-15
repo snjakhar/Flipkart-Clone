@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.border{
+    border: 5px solid black;
+    display: flex;
+    column-gap: 20px;
+}
+
+#left{
+    border: 2px solid yellow;
+    height: 700px;
+    width: 20%;
+}
+
+#right{
+    border:2px solid green;
+    height: 1ref;
+    width: 78%;
+
+}
+/* -------------------------------------------  BODY */
+
+/* -------------------------------------------  PRODUCTS */
+
+#main{
+    border: 1px solid royalblue;
+    height: 280px;
+    /* width: 80%; */
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.prodImage{
+    border: 2px solid tomato;
+    height:250px;
+    width:22%;
+}
+
+.prodData{
+    border: 1px solid black;
+    width: 60%;
+}
+
+
+.mainR{
+    border: 3px soid rgb(133, 36, 0);
+    height: 600px;
+}
+
+.priceTag{
+    border:5px solid maroon;
+    width: 20%;
+    /* display: flex; */
+    
+    background-repeat: no-repeat;
+    
+}
+
