@@ -40,7 +40,7 @@ var data = [
   },
   {
     id:4,
-    name: "Bleach Cream",
+    name: "DELL Inspiron Ryzen 3 Dual Core 3250U - (8 GB/1 TB HDD/Windows 10) Inspiron 3505 Notebook ",
     rating: "4.4",
     d1: "Intel Core i5 Processor (10th Gen)",
     d2: "8 GB DDR4 RAM",
@@ -78,7 +78,7 @@ var data = [
     img: "https://rukminim1.flixcart.com/image/312/312/ksyz8280/computer/f/9/9/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9kxzc6rrh.jpeg?q=70",
   },
   {
-    id:6,
+    id:7,
     name: "HP Pavilion Gaming Ryzen 5 Hexa Core 4600H - (8 GB/1 TB HDD/Windows 10 Home/4 GB Graphics/NVIDIA GeForce GTX 1650) 15-ec1021AX Gaming Laptop",
     rating: "4.4",
     d1: "Intel Core i5 Processor (10th Gen)",
@@ -91,7 +91,7 @@ var data = [
     img: "https://rukminim1.flixcart.com/image/312/312/kbqu4cw0/computer/q/x/r/hp-original-imaftyzachgrav8f.jpeg?q=70",
   },
   {
-    id:7,
+    id:8,
     name: "Lenovo Legion 5 Ryzen 5 Hexa Core 4600H - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home/4 GB Graphics/NVID...",
     rating: "4.5",
     d1: "AMD Ryzen 5 Hexa Processor ",
@@ -186,11 +186,17 @@ function showData(arr) {
 
 showData(data);
 
-// Short DAta High TO Low
+//---------------------------------------------------------------
+
+// Short DAta 
 let btn1 = document.querySelector(".low-to-high");
 let btn2 = document.querySelector(".high-to-low");
 let btn3 = document.querySelector(".above20");
+let btn4 = document.querySelector(".above30");
+let btn5 = document.querySelector(".rate4");
+let btn6 = document.querySelector(".rate3");
 
+//----------------------------------- Low to High
 btn1.addEventListener("click", lth);
 
 function lth() {
@@ -199,6 +205,8 @@ function lth() {
   });
   showData(soreted_lth);
 }
+
+//-----------------------------------  High to Low
 btn2.addEventListener("click", htl);
 
 function htl() {
@@ -208,6 +216,7 @@ function htl() {
   showData(soreted_htl);
 }
 
+//------------------------------------ Filter the data
 btn3.addEventListener("click", above20);
 
 function above20() {
@@ -216,3 +225,35 @@ function above20() {
   });
   showData(abovetwenty);
 }
+
+btn4.addEventListener("click", above30);
+
+function above30() {
+  let abovethirty = data.filter(function (item) {
+    return item.price < 30000;
+   
+  });
+  showData(abovethirty);
+}
+//--------------------------------------------
+btn5.addEventListener("click", rate4);
+
+function rate4() {
+  let rate1 = data.sort(function (a, b) {
+    return a.rating - b.rating;
+   
+  });
+  showData(rate1);
+}
+
+btn6.addEventListener("click", rate3);
+
+function rate3() {
+  let rate2 = data.sort(function (a, b) {
+    return b.rating - a.rating;
+   
+  });
+  showData(rate2);
+}
+
+
