@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers</title>
+    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .second-header {
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%);
+      font-weight: 100;
+      height: 40px;
+      margin-top: 10px;
+    }
+    .second-header span:hover {
+      cursor: pointer;
+    }
+    .fa-sort-down {
+      color: grey;
+    }
+
+    /* container */
+    .container {
+      display: flex;
+      width: 100%;
+      height: auto;
+      gap: 20px;
+      margin-right: 5px;
+    }
+    .left-box {
+      width: 20%;
+      /* border: 2px solid red; */
+    }
+    .righ-box {
+      width: 80%;
+      /* border: 2px solid brown; */
+    }
+    ul {
+      margin-left: 10px;
+      padding: 10px;
+    }
+    ul button {
+      text-decoration: none;
+      background-color: transparent;
+      border: none;
+      line-height: 40px;
+    }
+    .right-box-header {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .items {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 20% 50% 20%;
+      row-gap: 1%;
+    }
+    .items > div {
+      border-bottom: 1px solid grey;
+    }
+    .display-items img {
+      width: 200px;
+      height: 200px;
+    }
+    .descdiv {
+      padding-left: 10px;
+    }
+  </style>
+  <body>
+    <header></header>
+    <div class="second-header">
+      <span
+        >Electronics
+        <i class="fas fa-sort-down"></i>
+      </span>
+      <span>TVs & Appliances<i class="fas fa-sort-down"></i></span>
+      <span>Men<i class="fas fa-sort-down"></i></span>
+      <span>Women<i class="fas fa-sort-down"></i></span>
+      <span>Baby & Kids<i class="fas fa-sort-down"></i></span>
+      <span>Home & Furniture<i class="fas fa-sort-down"></i></span>
+      <span>Sports Bookds and more<i class="fas fa-sort-down"></i></span>
+      <span>Flight<i class="fas fa-sort-down"></i></span>
+      <span>Offer Zone<i class="fas fa-sort-down"></i></span>
+    </div>
+
+    <!-- container -->
+    <section>
+      <div class="container">
+        <div class="left-box">
+          <h3>Filters</h3>
+          <div class="category">
+            <p>category</p>
+            <ul>
+              <li><button>Electronics</button></li>
+              <li><button>Jewelery</button></li>
+              <li><button>men's clothing</button></li>
+              <li><button>women's clothing</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="righ-box">
+          <div class="right-box-header">
+            <span><h4>Sort By</h4></span>
+            <span>Price-Low to High</span>
+            <span>Price-High to Low</span>
+          </div>
+          <div class="display-items">
+            <div class="items"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+<script type="module">
+  import { navbar, footer } from "./Components/nav_foot.js";
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+</script>
+
+<script>
+  let displaybox = document.querySelector(".items");
+
+  showitems();
+  async function showitems() {
+    console.log("here");
+    let url = `https://api.bestbuy.com/v1/products(onSale=true)?apiKey=3b1upy8OYY1QZCEFx6LVDJgT&sort=sku.asc&show=sku,name,customerReviewAverage,image,salePrice,shortDescription&pageSize=50&page=2&format=json`;
+    let res = await fetch(url);
+    let data = await res.json();
+    let arr = data.products;
+    console.log(data);
+    arr.map(
+      ({ name, customerReviewAverage, image, salePrice, shortDescription }) => {
+        let imgdiv = document.createElement("div");
+        imgdiv.innerHTML = `<img src=${image}>`;
+        let descdiv = document.createElement("div");
+        descdiv.className = "descdiv";
+        descdiv.innerHTML = `<h3>${name}</h2>
+        <p>Rating${customerReviewAverage}</p>
+        <p>${shortDescription}</p>`;
+        let pricediv = document.createElement("div");
+        pricediv.innerHTML = `<p>Price:${salePrice}</p>`;
+
+        displaybox.append(imgdiv, descdiv, pricediv);
+      }
+    );
+  }
+</script>

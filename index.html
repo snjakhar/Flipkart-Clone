@@ -5,16 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flipkart</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
+    <script src="JS/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="Styles/slick-theme.css" />
+    <link rel="stylesheet" href="Styles/slick.css" />
+    <link rel="stylesheet" href="Styles/navbar.css" />
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
-    <link rel="stylesheet" href="Styles/navbar.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -22,7 +20,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="Styles/Mainpage.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -79,7 +76,7 @@
     <!-- Banner Section-->
     <section>
       <div class="banner">
-        <div id="slider">
+        <div class="slider">
           <div><img src="Mainpage-images/banner2.jpg" /></div>
           <div><img src="Mainpage-images/banner1.jpg" /></div>
           <div><img src="Mainpage-images/banner3.jpg" /></div>
@@ -384,7 +381,7 @@
           <div class="common-col col-tranding">
             <img src="Mainpage-images/w7.jpeg" />
 
-            <h3>black watch</h3>
+            <h3>Trending Music Instrument</h3>
             <h4>up to 20% off</h4>
             <h6>Now<i class="fas fa-rupee-sign"></i>999</h6>
           </div>
@@ -393,122 +390,26 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-row">
-        <div class="footer-col-1">
-          <div class="footer-heading">
-            <p>About</p>
-          </div>
-          <div class="footer-list">
-            <a href="">Contact us</a>
-            <a href="">About us</a>
-            <a href="">Career</a>
-            <a href="">Flipkart Stories</a>
-            <a href="">Press</a>
-            <a href="">Flipkart Wholesale</a>
-            <a href="">Corporate Information</a>
-          </div>
-        </div>
-
-        <div class="footer-col-2">
-          <div class="footer-heading">
-            <p>Help</p>
-          </div>
-          <div class="footer-list">
-            <a href="">Payments</a>
-            <a href="">Shipping</a>
-            <a href="">Cancellation & Returns</a>
-            <a href="">FAQ</a>
-            <a href="">Report</a>
-          </div>
-        </div>
-
-        <div class="footer-col-3">
-          <div class="footer-heading">
-            <p>Policy</p>
-          </div>
-          <div class="footer-list">
-            <a href="">Return Policy</a>
-            <a href="">Terms of use</a>
-            <a href="">Security </a>
-            <a href="">Privacy</a>
-            <a href="">Sitemap</a>
-            <a href="">EPR</a>
-          </div>
-        </div>
-
-        <div class="footer-col-4">
-          <div class="footer-heading">
-            <p>Social</p>
-          </div>
-          <div class="footer-list">
-            <a href="">Facebook</a>
-            <a href="">Twitter</a>
-            <a href="">Youtube </a>
-          </div>
-        </div>
-
-        <div class="footer-col-5">
-          <div class="footer-heading">
-            <p>Mail Us</p>
-          </div>
-          <div class="footer-list">
-            <p>
-              Flipkart Internet Private Limited, Buildings Alyssa, Begonia &
-              Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
-              Village, Bengaluru, 560103, Karnataka, India
-            </p>
-          </div>
-        </div>
-
-        <div class="footer-col-6">
-          <div class="footer-heading">
-            <p>REGISTERED OFFICE ADDRESS</p>
-          </div>
-          <div class="footer-list">
-            <p>
-              Flipkart Internet Private Limited, Buildings Alyssa, Begonia &
-              Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
-              Village, Bengaluru, 560103, Karnataka, India CIN :
-              U51109KA2012PTC066107 Telephone: <span>1800 202 9898</span>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-row2">
-        <div class="footer-row2-col">
-          <p>Sell On Flipkart</p>
-        </div>
-        <div class="footer-row2-col">
-          <p>Advertise</p>
-        </div>
-        <div class="footer-row2-col">
-          <p>Gift Cards</p>
-        </div>
-        <div class="footer-row2-col">
-          <p>Help Center</p>
-        </div>
-        <div class="footer-row2-col">
-          <p>© 2007-2021 Flipkart.com</p>
-        </div>
-        <div class="footer-row2-col">
-          <img src="Mainpage-images/payment.png" alt="" />
-        </div>
-      </div>
-    </footer>
+    <footer></footer>
   </body>
 </html>
+
 <script type="module">
-  import { navbar } from "./Components/navbar.js";
+  import { navbar, footer } from "./Components/nav_foot.js";
+
   let header = document.querySelector("header");
   header.innerHTML = navbar();
-  
-  $('#slider').slick({
+
+  let last = document.querySelector("footer");
+  last.innerHTML = footer();
+
+  let slider = document.querySelector(".slider");
+
+  $(".slider").slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
     dots: true,
     infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true,
+    cssEase: "linear",
   });
 </script>
