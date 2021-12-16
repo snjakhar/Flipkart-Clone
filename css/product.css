@@ -7,18 +7,22 @@
     border: 5px solid black;
     display: flex;
     column-gap: 20px;
+    background-color: #ddd;
 }
 
 #left{
     border: 2px solid yellow;
     height: 700px;
     width: 20%;
+    background-color: white;
 }
 
 #right{
-    border:2px solid green;
+    /* border:2px solid green; */
     height: 1ref;
-    width: 78%;
+    width: 79%;
+    /* background-color: #ddd; */
+    padding: 5px;
 
 }
 /* -------------------------------------------  BODY */
@@ -27,36 +31,77 @@
 
 #main{
     border: 1px solid royalblue;
+    background-color: white;
     height: 280px;
     /* width: 80%; */
     display: flex;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+    padding: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
 .prodImage{
     border: 2px solid tomato;
-    height:250px;
+    height:200px;
     width:22%;
 }
 
 .prodData{
     border: 1px solid black;
+    /* height: 200px; */
     width: 60%;
 }
 
 
-.mainR{
+/* .mainR{
     border: 3px soid rgb(133, 36, 0);
     height: 600px;
-}
+} */
 
 .priceTag{
     border:5px solid maroon;
     width: 20%;
-    /* display: flex; */
-    
-    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap 1; 
+    column-gap: 15px;
     
 }
+
+.rate{
+    border: 1px solid green;
+    height: 15px;
+    background-color: #494;
+    width: 6.5%;
+    color: ivory;
+    /* margin-top: 5px; */
+    border-radius: 3px;
+    text-align: left;
+    padding: 5px 0px;
+   
+}
+
+ .dots{
+    color: rgb(97, 74, 74);
+    line-height: 22px;
+    margin-left: 10px;
+    margin-top: 8px;
+    
+}
+
+/* .dots span {
+    color: black;
+}  */
+
+.assure{
+    width: 50%;
+    height: 30px;
+}
+
+.review{
+    display: inline-block;
+    color: #ddd;
+}
+
 
