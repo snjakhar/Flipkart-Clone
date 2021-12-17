@@ -51,6 +51,29 @@
     .price-detail span {
       float: right;
     }
+    .inc-dec-btn {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+      background-color: whitesmoke;
+      border-radius: 50%;
+      color: grey;
+      font-size: 28px;
+      cursor: pointer;
+      border: none;
+    }
+    .qty-span {
+      padding: 8px;
+      margin: 0px 10px 0px 10px;
+      font-size: 22px;
+    }
+    .rm_btn {
+      font-weight: bolder;
+      margin-left: 70px;
+      padding: 5px;
+      font-size: large;
+      border: none;
+    }
   </style>
   <body>
     <div class="container">
@@ -63,7 +86,7 @@
           <div class="price-detail">
             <p>Price <span id="price">1000</span></p>
             <p>Delivery Charges <span>₹135</span></p>
-            <p >Total Amount <span id="amount">1035</span></p>
+            <p>Total Amount <span id="amount">1035</span></p>
           </div>
         </div>
       </div>
@@ -187,8 +210,8 @@
       return id == item.id;
     });
     sum += id_data[0].price;
-    price.innerText ="₹"+sum;
-    amount.innerText =sum+135;
+    price.innerText = "₹" + sum;
+    amount.innerText = sum + 135;
     dispplay_id_data(id_data);
   });
 
@@ -204,7 +227,33 @@
       imgdiv.innerHTML = `<img src=${e.img}>`;
       descdiv.innerHTML = `<h2>${e.name}</h2>
         <p>₹${e.price}<p>`;
+      // Quantity Inc Dec Buttons
+      let decbtn = document.createElement("button");
+      decbtn.className = "inc-dec-btn";
+      decbtn.textContent = "-";
+      let qty = document.createElement("span");
+      qty.textContent = 1;
+      qty.className = "qty-span";
+      let incbtn = document.createElement("button");
+      incbtn.textContent = "+";
+      incbtn.className = "inc-dec-btn";
+      // remove Button
+      let rm_btn = document.createElement("button");
+      rm_btn.className = "rm_btn";
+      rm_btn.textContent = "REMOVE";
 
+      rm_btn.addEventListener("click", () => {
+        console.log(e.id);
+        for (let i = 0; i < cart_ids_arr.length; i++) {
+          if (cart_ids_arr[i] == e.id) {
+            cart_ids_arr.slice(i, 1);
+          }
+        }
+        console.log(cart_ids_arr);
+        // localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
+      });
+
+      descdiv.append(decbtn, qty, incbtn, rm_btn);
       flex_box.append(imgdiv, descdiv);
       left.append(flex_box);
     });
