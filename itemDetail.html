@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="Styles/navbar.css" />
     <style>
       * {
         font-family: sans-serif;
@@ -62,6 +63,7 @@
     </style>
   </head>
   <body>
+    <header></header>
     <div id="main">
       <div id="imgdv"></div>
 
@@ -74,6 +76,7 @@
         </div>
       </div>
     </div>
+    <footer></footer>
   </body>
 </html>
 <script>
@@ -375,3 +378,19 @@
   Getdata();
   localStorage.clear('itemsId')
 </script>
+
+
+<script type="module">
+  import { navbar, footer } from "./Components/nav_foot.js";
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+
+  let last = document.querySelector("footer");
+  last.innerHTML = footer();
+
+  let slider = document.querySelector(".slider");
+
+ 
+</script>
+
