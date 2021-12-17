@@ -20,6 +20,7 @@
   padding: 10px;
   background-color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 #right {
@@ -36,13 +37,14 @@
 #main {
   /* border: 1px solid royalblue; */
   background-color: white;
-  height: 280px;
+  height: 300px;
   /* width: 80%; */
   display: flex;
   /* flex-wrap: wrap; */
   cursor: pointer;
-  padding: 15px;
-  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 5px;
 }
 
 .prodImage {
