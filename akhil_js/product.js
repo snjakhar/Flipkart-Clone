@@ -238,7 +238,7 @@ function showData(arr) {
 
     var rate = document.createElement("div");
     rate.setAttribute("class", "rate");
-    rate.innerHTML = item.rating + "★";
+    rate.innerHTML = `<span>${item.rating}★</span>`;
 
     var text1 = document.createElement("div");
     text1.innerHTML = `<h5 class="review">Rating & Review</h5>`;
@@ -287,8 +287,9 @@ function showData(arr) {
     // Add Event listtner to main div
 
     main.addEventListener('click',function(){
-     localStorage.setItem("itemsId",JSON.stringify(item));
-     window.open("itemDetail.html")
+    localStorage.setItem("itemsId",JSON.stringify(item.id));
+    window.location.href='itemDetail.html';
+     
     })
 
 

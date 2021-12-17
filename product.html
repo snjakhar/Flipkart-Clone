@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Page</title>
     <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="Styles/navbar.css" />
   </head>
   <body>
+    <header>
+
+    </header>
+
     <div class="border">
       <div id="left">
         <div class="box1">
@@ -79,3 +84,12 @@
 </html>
 
 <script src="akhil_js/product.js"></script>
+<script type="module">
+  import { navbar, footer } from "./Components/nav_foot.js";
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+
+  let last = document.querySelector("footer");
+  last.innerHTML = footer(); 
+</script>
