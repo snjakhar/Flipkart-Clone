@@ -188,11 +188,11 @@
 
   let id = JSON.parse(localStorage.getItem("itemid"));
   let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
-  id = 5;
+  id = 2;
   let Select_data = data.filter(function (item) {
     return item.id == id;
   });
-  console.log(Select_data[0]);
+
 
   let main = document.getElementById("main");
   let BtnDiv = document.createElement("div");

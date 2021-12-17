@@ -15,13 +15,17 @@
     .left {
       width: 70%;
       border: 1px solid teal;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      border:none;
     }
     .right {
       width: 25%;
-      border: 1px solid teal;
+      /* border: 1px solid teal; */
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      border:none;
     }
     .left-header {
-      border: 1px solid grey;
+      /* border: 1px solid grey; */
       height: 50px;
     }
     .flex-box {
@@ -32,7 +36,7 @@
     .img-div {
       width: 20%;
       height: 200px;
-      border: 1px solid blue;
+      /* border: 1px solid blue; */
     }
     .img-div img {
       width: 100%;
@@ -41,7 +45,12 @@
     .desc-div {
       width: 75%;
       height: 200px;
-      border: 1px solid blue;
+      /* border: 1px solid blue; */
+    }
+    .desc-div img{
+      width: 82px;
+      height: 25px;
+      margin-left: 15px;
     }
     .price-detail {
       padding: 20px;
@@ -74,6 +83,15 @@
       font-size: large;
       border: none;
     }
+    #checkout-button{
+      width: 240px;
+      height: 40px;
+      background-color: rgb(89, 89, 238);
+      color: white;
+      margin-left: 20%;
+      border-radius: 10px;
+      font-weight: bolder;
+    }
   </style>
   <body>
     <div class="container">
@@ -85,8 +103,10 @@
           <h3>PRICE DETAILS</h3>
           <div class="price-detail">
             <p>Price <span id="price">1000</span></p>
-            <p>Delivery Charges <span>₹135</span></p>
+            <p>Delivery Charges <span id="dl">₹0</span></p>
             <p>Total Amount <span id="amount">1035</span></p>
+
+            <button id="checkout-button">Checkout</button>
           </div>
         </div>
       </div>
@@ -205,15 +225,25 @@
   let sum = 0;
   let price = document.getElementById("price");
   let amount = document.getElementById("amount");
-  cart_ids_arr.map((id) => {
-    let id_data = data.filter((item) => {
-      return id == item.id;
+  let dl = document.getElementById("dl");
+  getLocalStorage(cart_ids_arr);
+
+  function getLocalStorage(arr) {
+    left.innerHTML = "";
+    price.innerText = "";
+    amount.innerText = "";
+    dl.innerText = "";
+    arr.map((id) => {
+      let id_data = data.filter((item) => {
+        return id == item.id;
+      });
+      sum += id_data[0].price;
+      price.innerText = "₹" + sum;
+      amount.innerText = sum + 135;
+      dl.innerText = 135;
+      dispplay_id_data(id_data);
     });
-    sum += id_data[0].price;
-    price.innerText = "₹" + sum;
-    amount.innerText = sum + 135;
-    dispplay_id_data(id_data);
-  });
+  }
 
   function dispplay_id_data(id_data) {
     id_data.map((e) => {
@@ -226,17 +256,43 @@
 
       imgdiv.innerHTML = `<img src=${e.img}>`;
       descdiv.innerHTML = `<h2>${e.name}</h2>
-        <p>₹${e.price}<p>`;
+        <h2>₹${e.price}<img src=Images/assured.png><h2>`;
+      let p = e.price;
       // Quantity Inc Dec Buttons
+
+      //Dec button
       let decbtn = document.createElement("button");
       decbtn.className = "inc-dec-btn";
       decbtn.textContent = "-";
+      decbtn.addEventListener("click", () => {
+        if (+qty.textContent == 1) {
+          return;
+        }
+        qty.textContent = +qty.textContent - 1;
+        sum -= p;
+        price.innerText = "₹" + sum;
+        amount.innerText = sum + 135;
+      });
+
       let qty = document.createElement("span");
-      qty.textContent = 1;
+      qty.textContent = "1";
       qty.className = "qty-span";
+
+      //Inc Button
       let incbtn = document.createElement("button");
       incbtn.textContent = "+";
       incbtn.className = "inc-dec-btn";
+
+      incbtn.addEventListener("click", () => {
+        if (+qty.textContent == 5) {
+          alert("Maximum 5 Quantity Per Item Allowed");
+          return;
+        }
+        qty.textContent = +qty.textContent + 1;
+        sum += p;
+        price.innerText = "₹" + sum;
+        amount.innerText = sum + 135;
+      });
       // remove Button
       let rm_btn = document.createElement("button");
       rm_btn.className = "rm_btn";
@@ -246,11 +302,13 @@
         console.log(e.id);
         for (let i = 0; i < cart_ids_arr.length; i++) {
           if (cart_ids_arr[i] == e.id) {
-            cart_ids_arr.slice(i, 1);
+            cart_ids_arr.splice(i, 1);
           }
         }
         console.log(cart_ids_arr);
-        // localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
+        localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
+        cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
+        getLocalStorage(cart_ids_arr);
       });
 
       descdiv.append(decbtn, qty, incbtn, rm_btn);
