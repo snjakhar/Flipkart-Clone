@@ -1,0 +1,55 @@
+*{
+    font-family: sans-serif;
+    background-color: #E3F2FD;
+}
+#div{
+    display: flex;
+    border: 1px solid;
+   
+}
+#imgDiv{
+    margin-top: 200px;
+    margin-left: 5%;
+    border: 1px solid;
+}
+#di_div{
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 100px;
+    padding: 3%;
+    border: 1px solid;
+}
+#review{
+    background-color: green;
+    color: whitesmoke;
+    width: 30px;
+    border-radius: 2px;
+    text-align: center;
+}
+p{
+    line-height: 25px;
+}
+#name{
+    line-height: 30px;
+}
+#AdBTn{
+    background-color: #FFCA28;
+    border: 0;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    
+}
+#ByBTn{
+    background-color: #FF7043;
+    border: 0;
+    width: 100px;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+#AbDv{
+    padding: 10px;
+    margin-left: 25%;
+    margin-top: 30px;
+}
