@@ -186,8 +186,9 @@
 
   // document.getElementById("lasdata").style.display = "none";
 
-  let id = JSON.parse(localStorage.getItem("itemsId"));
-
+  let id = JSON.parse(localStorage.getItem("itemid"));
+  let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
+  id = 5;
   let Select_data = data.filter(function (item) {
     return item.id == id;
   });
@@ -245,6 +246,20 @@
       Disdiv.append(name, rating, price, d1, d2, d3, d4, d5, d6);
       BtnDiv.append(AddCartbtn, Buybtn);
       main.append(imgDiv, Disdiv);
+
+      AddCartbtn.addEventListener("click", () => {
+        let mili = false;
+        cart_ids_arr.map((e) => {
+          if (e == id) {
+            alert("Item is already in cart");
+            mili = true;
+          }
+        });
+        if (!mili) {
+          cart_ids_arr.push(id);
+          localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
+        }
+      });
     });
   }
   Getdata();

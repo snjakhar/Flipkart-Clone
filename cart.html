@@ -24,7 +24,7 @@
       border: 1px solid grey;
       height: 50px;
     }
-    .display-items {
+    .flex-box {
       display: flex;
       justify-content: space-evenly;
       margin-top: 15px;
@@ -34,22 +34,39 @@
       height: 200px;
       border: 1px solid blue;
     }
+    .img-div img {
+      width: 100%;
+      height: 100%;
+    }
     .desc-div {
       width: 75%;
       height: 200px;
       border: 1px solid blue;
+    }
+    .price-detail {
+      padding: 20px;
+      font-weight: bolder;
+      font-size: 24px;
+    }
+    .price-detail span {
+      float: right;
     }
   </style>
   <body>
     <div class="container">
       <div class="left">
         <div class="left-header"></div>
-        <div class="display-items">
-          <div class="img-div"></div>
-          <div class="desc-div"></div>
+      </div>
+      <div class="right">
+        <div class="right-header">
+          <h3>PRICE DETAILS</h3>
+          <div class="price-detail">
+            <p>Price <span id="price">1000</span></p>
+            <p>Delivery Charges <span>₹135</span></p>
+            <p >Total Amount <span id="amount">1035</span></p>
+          </div>
         </div>
       </div>
-      <div class="right"></div>
     </div>
   </body>
 </html>
@@ -160,4 +177,36 @@
       img: "https://rukminim1.flixcart.com/image/312/312/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg?q=70",
     },
   ];
+  let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
+  let left = document.querySelector(".left");
+  let sum = 0;
+  let price = document.getElementById("price");
+  let amount = document.getElementById("amount");
+  cart_ids_arr.map((id) => {
+    let id_data = data.filter((item) => {
+      return id == item.id;
+    });
+    sum += id_data[0].price;
+    price.innerText ="₹"+sum;
+    amount.innerText =sum+135;
+    dispplay_id_data(id_data);
+  });
+
+  function dispplay_id_data(id_data) {
+    id_data.map((e) => {
+      let flex_box = document.createElement("div");
+      flex_box.className = "flex-box";
+      let imgdiv = document.createElement("div");
+      imgdiv.className = "img-div";
+      let descdiv = document.createElement("div");
+      descdiv.className = "desc-div";
+
+      imgdiv.innerHTML = `<img src=${e.img}>`;
+      descdiv.innerHTML = `<h2>${e.name}</h2>
+        <p>₹${e.price}<p>`;
+
+      flex_box.append(imgdiv, descdiv);
+      left.append(flex_box);
+    });
+  }
 </script>
