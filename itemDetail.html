@@ -14,20 +14,21 @@
         width: 80%;
         margin: auto;
         margin-top: 40px;
-        border: 1px solid;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
       #imgdv {
-        margin-top: 150px;
-        border: 1px solid;
+        padding: 8%;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
         width: 100%;
       }
-      img {
+      #imgdv img {
         width: 100%;
       }
       #disdv {
+        padding: 20px;
         margin-left: 10%;
         margin-top: 50px;
-        border: 1px solid;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
       }
       #rating {
         background-color: green;
@@ -59,19 +60,74 @@
         font-size: 18px;
         border-radius: 5px;
       }
+      #lasdata {
+        width: 46%;
+        float: right;
+        margin-right: 50px;
+      }
+      .general {
+        line-height: 30px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+      }
+      .proses {
+        line-height: 30px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+      }
+      span {
+        float: right;
+      }
     </style>
   </head>
   <body>
     <div id="main">
       <div id="imgdv"></div>
 
-      <div id="disdv">
-        <div id="lasdata">
-          <p>
-            Specifications General Sales Package Laptop, Power Adaptor, User
-            Guide, Warranty Documents
-          </p>
-        </div>
+      <div id="disdv"></div>
+    </div>
+    <div id="lasdata">
+      <h1>Specifications</h1>
+      <div class="general">
+        <h2>General</h2>
+        <ul>
+          <li>
+            Sales Package
+            <span> Laptop, Power Adaptor, User Guide, Warranty Documents</span>
+          </li>
+          <li>Model Number <span> 15IMH05 </span></li>
+          <li>Part Number <span> 81Y401APIN</span></li>
+          <li>Series <span> IdeaPad Gaming 3</span></li>
+          <li>Color<span> Onyx Black </span></li>
+          <li>Type<span> Gaming Laptop</span></li>
+          <li>Suitable For <span>Gaming, Processing & Multitasking </span></li>
+          <li>Battery Backup <span> Upto 8 hours</span></li>
+          <li>Power Supply<span>135 W Slim Tip Adapter </span></li>
+          <li>MS Office Provided<span> No</span></li>
+        </ul>
+      </div>
+      <div class="proses">
+        <h1>Processor And Memory Features</h1>
+        <ul>
+          <li>Dedicated Graphic Memory Type <span> GDDR6</span></li>
+          <li>Dedicated Graphic Memory Capacity<span> 4 GB</span></li>
+          <li>Processor Brand <span> Intel</span></li>
+          <li>Processor Name<span> Core i5 </span></li>
+          <li>Processor Generation<span> 10th Gen</span></li>
+          <li>SSD <span> Yes </span></li>
+          <li>SSD Capacity <span> 512 GB</span></li>
+          <li>RAM<span>8 GB </span></li>
+          <li>RAM Type<span> DDR4 </span></li>
+          <li>Processor Variant <span>10300H </span></li>
+          <li>Chipset<span> Intel HM470 </span></li>
+          <li>Clock Speed <span> 2.50 GHz with Turbo Boost Upto 4.50 GHz</span></li>
+          <li>Memory Slots <span>2 Slots </span></li>
+          <li>Expandable Memory <span> Upto 16 GB</span></li>
+          <li>RAM Frequency <span> 2933 MHz </span></li>
+          <li>Cache <span>8 MB </span></li>
+          <li>Graphic Processor<span> NVIDIA GeForce GTX 1650</span></li>
+          <li>Number of Cores <span>4 </span></li>
+        </ul>
       </div>
     </div>
   </body>
@@ -210,7 +266,7 @@
       name.innerText = prodt.name;
 
       let price = document.createElement("h3");
-      price.innerText = "₹ " + prodt.price;
+      price.innerHTML = `₹  ${prodt.price} <img src= https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png></img>` 
 
       let rating = document.createElement("h4");
       rating.innerHTML = prodt.rating + " ★";
