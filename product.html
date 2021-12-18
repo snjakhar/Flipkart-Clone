@@ -88,8 +88,6 @@
     <footer></footer>
   </body>
 </html>
-
-<script src="akhil_js/product.js"></script>
 <script type="module">
   import { navbar, footer } from "./Components/nav_foot.js";
 
@@ -104,4 +102,11 @@
 
   let len = cart_ids_arr.length;
   item_cart.innerText = len;
+
+
 </script>
+<script type="module" src="akhil_js/product.js" type="module">
+import {data} from "./JS/items_data.js"
+console.log(data)
+</script>
+

@@ -219,6 +219,7 @@ var data = [
 
 //-----------------------------------------------------
 
+
 let right = document.getElementById("right");
 let itemsId;
 
