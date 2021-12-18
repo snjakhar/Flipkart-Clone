@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="stylesheet" href="../css/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Styles/navbar.css" />
+  </head>
+ 
+  <body>
+    <header></header>
+
+    <div class="border">
+      <div id="left">
+        <div class="box1">
+          <h3>Filters</h3>
+          <h4>CLEAR ALL</h4>
+        </div>
+        <hr />
+        <br />
+        <div class="cats">
+          <h5>CATEGORIES</h5>
+          <br />
+          <p class="g">Computers</p>
+          <br />
+          <p class="b">Laptops</p>
+        </div>
+        <hr />
+        <br />
+
+        <div class="slidecontainer">
+          <div class="inBox1">
+            <h4>PRICE</h4>
+            <h5>CLEAR</h5>
+          </div>
+
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="myRange"
+          />
+          <div class="inBox2">
+            <br />
+            <!-- High to low / Low to high   btns-->
+            <button class="low-to-high">Min</button>
+            <p class="to">to</p>
+            <button class="high-to-low">Max</button>
+          </div>
+        </div>
+        <hr />
+        <br />
+        <!-- --------------------------------------------- Buttons -->
+        <!-- <button class="above20">Above 60000</button> -->
+        <h4>Price filter</h4>
+        <br />
+        <input type="checkbox" class="above30" name="Above 60000" />
+        <label for="above30"> Below 30000</label><br />
+        <br />
+        <input type="checkbox" class="above20" name="Above 60000" />
+        <label for="above20"> Above 60000</label>
+        <br />
+        <hr />
+        <br />
+
+        <!-- ------------------------------------------------ Rating -->
+        <h4>CUSTOMER RATINGS</h4>
+        <br />
+        <input type="checkbox" class="rate4" name="rate4" />
+        <label for="rate4">4★ & above</label> <br />
+        <br />
+        <input type="checkbox" class="rate3" name="rate3" />
+        <label for="rate3">3★ & above</label><br />
+      </div>
+
+      <div id="right"></div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
+
+<script src="akhil_js/product.js"></script>
+<script type="module">
+  import { navbar, footer } from "./Components/nav_foot.js";
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+
+  let last = document.querySelector("footer");
+  last.innerHTML = footer();
+
+  let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
+  let item_cart = document.getElementById("cart-item");
+
+  let len = cart_ids_arr.length;
+  item_cart.innerText = len;
+</script>

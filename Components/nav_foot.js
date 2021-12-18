@@ -16,7 +16,7 @@ function navbar(){
   <div class="header-right">
     <a class="active" href="">Login</a>
     <a href="#">more<i class="fas fa-sort-down"></i></a>
-    <a href="#"><i class="fas fa-shopping-cart"></i>cart</a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-item"></span></a>
   </div>`;
 }
 function footer(){

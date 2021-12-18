@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.border {
+  border: 5px solid black;
+  display: flex;
+  column-gap: 15px;
+  background-color: #ddd;
+  padding: 5px;
+}
+
+#left {
+  /* border: 2px solid yellow; */
+  height: 700px;
+  width: 20%;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#right {
+  /* border:2px solid green; */
+  height: 1ref;
+  width: 79%;
+  /* background-color: #ddd; */
+  padding: 5px;
+}
+/* -------------------------------------------  BODY */
+
+/* -------------------------------------------  PRODUCTS */
+
+#main {
+  /* border: 1px solid royalblue; */
+  background-color: white;
+  height: 300px;
+  /* width: 80%; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  cursor: pointer;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 5px;
+}
+
+.prodImage {
+  /* border: 2px solid tomato; */
+  height: 200px;
+  width: 22%;
+}
+
+.prodData {
+  /* border: 1px solid black; */
+  /* height: 200px; */
+  width: 60%;
+}
+
+/* .mainR{
+    border: 3px soid rgb(133, 36, 0);
+    height: 600px;
+} */
+
+.priceTag {
+  /* border:5px solid maroon; */
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap 1;
+  column-gap: 15px;
+}
+
+
+.rate span{
+    background-color: #494;
+    color: ivory;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 5px;
+}
+.dots {
+  color: rgb(97, 74, 74);
+  line-height: 22px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+/* .dots span {
+    color: black;
+}  */
+
+.assure {
+  width: 50%;
+  height: 30px;
+}
+
+.review {
+  display: inline-block;
+  color: #ddd;
+}
+
+/* ---------------------------------- Left Body */
+
+hr {
+  background-color: #eee;
+}
+
+#left .box1 {
+  border: 1px solid white;
+
+  display: flex;
+  column-gap: 60px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#left .box1 h4 {
+  color: #37f;
+}
+
+#left .cats {
+  /* border:1px solid #494; */
+  padding: 5px;
+}
+
+#left .cats .g {
+  color: rgb(97, 74, 74);
+  font-size: small;
+}
+
+#left .cats .b {
+  color: black;
+  font-size: small;
+  font-weight: bold;
+}
+/* --------------------------------- Slider */
+.slidecontainer {
+  /* border: 1px solid red; */
+  height: 140px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.slidecontainer #myRange {
+  /* margin-top: 25px; */
+  width: 95%;
+  display: inline-block;
+  column-gap: 130px;
+  cursor: pointer;
+}
+
+.slidecontainer .inBox1 {
+  display: flex;
+  column-gap: 80px;
+  padding: 8px;
+}
+
+.slidecontainer .inBox1 h5 {
+  color: #37f;
+}
+
+.slidecontainer .inBox2 {
+  height: 30px;
+  /* border: 1px solid teal; */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slidecontainer .low-to-high,
+.high-to-low {
+  width: 35%;
+}
+
+.inBox2 .to {
+  color: rgb(189, 178, 178);
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      #main {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+      #imgdv {
+        margin-top: 100px;
+        /* border: 1px solid; */
+        width: 100%;
+        padding: 10px;
+      }
+      img {
+        width: 100%;
+      }
+      #disdv {
+        padding: 10px;
+        line-height: 40px;
+        margin-left: 10%;
+        margin-top: 50px;
+        /* border: 1px solid; */
+      }
+      #rating {
+        background-color: green;
+        color: whitesmoke;
+        width: 50px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      #btndv {
+        padding: 10px;
+        margin-left: 15%;
+        margin-top: 20px;
+        display: flex;
+      }
+      #AdBTn {
+        background-color: #ffca28;
+        border: 0;
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+      #AdBTn:hover{
+        background-color: brown;
+      }
+      #ByBTn {
+        background-color: #ff7043;
+        border: 0;
+        width: 200px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+      #spc {
+        width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        gap: 30px;
+        /* border: .5px solid; */
+      }
+      #rght1 {
+        line-height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding: 30px;
+      }
+      #lft1 {
+        line-height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding: 30px;
+        margin-left: 10%;
+      }
+      #OS {
+        line-height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding: 30px;
+        margin-left: 10%;
+      }
+      span {
+        float: right;
+      }
+      #logo{
+        width: 77px;
+        height: 23px;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div id="main">
+      <div id="imgdv"></div>
+
+      <div id="disdv"></div>
+    </div>
+    <div id="lasdata">
+      <div id="cont">
+        <div>
+          <h1
+            style="
+              text-align: center;
+              width: 100%;
+              margin-top: 30px;
+              margin-bottom: 30px;
+            "
+          >
+            Specifications
+          </h1>
+        </div>
+        <div id="spc">
+          <div id="lft1">
+            <h1>General</h1>
+            <ul>
+              <li>
+                Sales Package
+                <span>
+                  Laptop, Power Adaptor, User Guide, Warranty Documents
+                </span>
+              </li>
+              <li>Model Number <span>FX506LI-HN271TS </span></li>
+              <li>Part Number <span>90NR03T2-M08010 </span></li>
+              <li>Series <span>TUF Gaming F15 </span></li>
+              <li>Color <span>Black Plastic </span></li>
+              <li>Type<span>Gaming Laptop </span></li>
+              <li>
+                Suitable For <span>Gaming, Processing & Multitasking </span>
+              </li>
+              <li>Power Supply <span> 150 W AC Adapter </span></li>
+              <li>Battery Cell <span>3 </span></li>
+              <li>MS Office Provided <span> Yes</span></li>
+              <li>Total Graphics Power <span>50 W </span></li>
+              <li>Wireless LAN <span>Wi-Fi 6(802.11ax) </span></li>
+              <li>Bluetooth <span> v5.2 </span></li>
+              <li>Ethernet<span>10/100/1000 </span></li>
+              <li>Dimensions <span>359 x 256 x 24.9 </span></li>
+            </ul>
+          </div>
+          <div id="rght1">
+            <h1>Processor And Memory Features</h1>
+            <ul>
+              <li>Dedicated Graphic Memory Type <span>GDDR6 </span></li>
+              <li>Dedicated Graphic Memory Capacity <span> 4 GB </span></li>
+              <li>Processor Brand <span>Intel </span></li>
+              <li>Processor Name <span>Core i5 </span></li>
+              <li>Processor Generation <span>10th Gen </span></li>
+              <li>SSD<span>Yes </span></li>
+              <li>SSD Capacity <span>512 GB </span></li>
+              <li>RAM<span>8 GB </span></li>
+              <li>RAM Type <span>DDR4 </span></li>
+              <li>Processor Variant <span> 10300H </span></li>
+              <li>Chipset <span>Mobile Intel HM470 Express Chipsets </span></li>
+              <li>
+                Clock Speed<span>
+                  2.5 GHz to max turbo frequency at 4.5 Ghz
+                </span>
+              </li>
+              <li>Memory Slots <span> 2 </span></li>
+              <li>RAM Frequency <span> 2933 MHz </span></li>
+              <li>Cache <span>8 </span></li>
+              <li>
+                Graphic Processor <span>NVIDIA GeForce GTX 1650 Ti </span>
+              </li>
+              <li>Number of Cores <span> 4 </span></li>
+            </ul>
+          </div>
+          <div id="OS">
+            <h1>Operating System</h1>
+            <ul>
+              <li>OS Architecture <span> 64 bit </span></li>
+              <li>Operating System <span>Windows 10 Home </span></li>
+              <li>System Architecture <span>64 </span></li>
+            </ul>
+          </div>
+          <div id="rght1">
+            <ul>
+              <li>Hardware Interface<span>PCIe NVMe M.2 </span></li>
+              <li>RJ45<span>No </span></li>
+              <li>
+                USB Port<span
+                  >1x USB 2.0 Type-A, 2x USB 3.2 (Gen 1) Type-A, 1x Type C
+                  USB3.2 (Gen 2) with Display Port and G-Sync</span
+                >
+              </li>
+              <li>HDMI Port <span> 1x HDMI (v2.0b) </span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
+<script>
+  var data = [
+    {
+      id: 1,
+      name: "Lenovo IdeaPad Gaming 3 Core i5 10th Gen - (8 GB/512 GB SSD/Windows 10 Home/4 GB Graphics/NVIDIA GeFor...",
+      rating: "4.3",
+      d1: "Intel Core i5 Processor (10th Gen)",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "512 GB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Warranty + 1 Year ADP + 1 Year Premium care",
+      price: 58990,
+      img: "https://rukminim1.flixcart.com/image/312/312/kp2y2kw0/computer/3/q/k/lenovo-original-imag3eht25nykhjn.jpeg?q=70",
+    },
+    {
+      id: 2,
+      name: "Lenovo Legion 5 Ryzen 5 Hexa Core 4600H - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home/4 GB Graphics/NVID...",
+      rating: "4.5",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 67690,
+      img: "https://rukminim1.flixcart.com/image/312/312/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg?q=70",
+    },
+    {
+      id: 3,
+      name: "ASUS TUF Gaming F15 Core i5 10th Gen - (8 GB/512 GB SSD/Windows 10 Home/4 GB Graphics/NVIDIA GeForce G.",
+      rating: "4.4",
+      d1: "Intel Core i5 Processor (10th Gen)",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "512 GB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Warranty + 1 Year ADP + 1 Year Premium care",
+      price: 49990,
+      img: "https://rukminim1.flixcart.com/image/312/312/ku4ezrk0/computer/2/z/l/fx506hcb-hn228t-gaming-laptop-asus-original-imag7bhenhg7nqvh.jpeg?q=70",
+    },
+    {
+      id: 4,
+      name: "DELL Inspiron Ryzen 3 Dual Core 3250U - (8 GB/1 TB HDD/Windows 10) Inspiron 3505 Notebook ",
+      rating: "4.4",
+      d1: "Intel Core i5 Processor (10th Gen)",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "512 GB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "2 Year Warranty Team Gaming ",
+      price: 55990,
+      img: "https://rukminim1.flixcart.com/image/312/312/kp1imq80/computer/u/b/z/na-gaming-laptop-acer-original-imag3d63hk3h8nm2.jpeg?q=70",
+    },
+    {
+      id: 5,
+      name: "MSI GF63 Thin Core i7 10th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home/4 GB Graphics/NVIDIA GeForc...",
+      rating: "4.3",
+      d1: "Intel Core i7 Processor (10th Gen)",
+      d2: "16 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "2 Year Warranty Team Gaming ",
+      price: 64990,
+      img: "https://rukminim1.flixcart.com/image/312/312/ko7idu80/computer/x/l/i/gf63-thin-10scxr-1616in-notebook-msi-original-imag2q55h6w2avfr.jpeg?q=70",
+    },
+    {
+      id: 6,
+      name: "ASUS VivoBook 15 (2021) Core i3 11th Gen - (4 GB/256 GB SSD/Windows 10 Home) X515EA-EJ302TS Thin and Light Laptop",
+      rating: "4.3",
+      d1: "Intel Core i5 Processor (10th Gen)",
+      d2: "16 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "Microsoft Office Home & Student 2019",
+      price: 64990,
+      img: "https://rukminim1.flixcart.com/image/312/312/ksyz8280/computer/f/9/9/x515ea-ej302ts-thin-and-light-laptop-asus-original-imag6fc9kxzc6rrh.jpeg?q=70",
+    },
+    {
+      id: 7,
+      name: "HP Pavilion Gaming Ryzen 5 Hexa Core 4600H - (8 GB/1 TB HDD/Windows 10 Home/4 GB Graphics/NVIDIA GeForce GTX 1650) 15-ec1021AX Gaming Laptop",
+      rating: "4.4",
+      d1: "Intel Core i5 Processor (10th Gen)",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "512 GB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "2 Year Warranty Team Gaming ",
+      price: 55990,
+      img: "https://rukminim1.flixcart.com/image/312/312/kbqu4cw0/computer/q/x/r/hp-original-imaftyzachgrav8f.jpeg?q=70",
+    },
+    {
+      id: 8,
+      name: "Lenovo Legion 5 Ryzen 5 Hexa Core 4600H - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home/4 GB Graphics/NVID...",
+      rating: "4.5",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 67690,
+      img: "https://rukminim1.flixcart.com/image/312/312/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg?q=70",
+    },
+    //---------
+    {
+      id: 9,
+      name: "ASUS EeeBook 12 Celeron Dual Core - (4 GB/64 GB EMMC Storage/Windows 10 Home) E210MA-GJ011T Thin and L..",
+      rating: "4.5",
+      d1: "•	Intel Celeron Dual Core Processor ",
+      d2: "•	4 GB LPDDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "29.46 cm (11.6 Inch) Display",
+      d5: "1 TB HDD|256 GB SSD",
+      d6: "1 Year Onsite Warranty ",
+      price: 28790,
+      img: "https://rukminim1.flixcart.com/image/312/312/kgfg2vk0/computer/e/j/f/asus-vivobook-laptop-original-imafwzf5e8awkm9x.jpeg?q=70",
+    },
+
+    {
+      id: 10,
+      name: "DELL Vostro 3405 Athlon Dual Core 3050 - (4 GB/256 GB SSD/Windows 10 Home) Vostro 3405 Thin and Light ...",
+      rating: "4.5",
+      d1: "AMD Athlon Dual Core Processor",
+      d2: "4 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 37690,
+      img: "https://rukminim1.flixcart.com/image/312/312/kk76wsw0/computer/h/j/o/lenovo-original-imafzhsyzryckmew.jpeg?q=70",
+    },
+
+    {
+      id: 11,
+      name: "ASUS Chromebook Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) CX1101CMA-GJ0007 Chromebook",
+      rating: "5",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 18990,
+      img: "https://rukminim1.flixcart.com/image/312/312/ku4ezrk0/computer/w/s/8/na-thin-and-light-laptop-asus-original-imag7bh7edgbdpey.jpeg?q=70",
+    },
+
+    {
+      id: 12,
+      name: "acer Aspire 5 Core i5 11th Gen - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home) A515-56 Thin and Light Lap...",
+      rating: "4",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 49999,
+      img: "https://rukminim1.flixcart.com/image/312/312/ktrk13k0/computer/r/f/g/v15-ada-laptop-lenovo-original-imag7fh6fufy5cjp.jpeg?q=70",
+    },
+
+    {
+      id: 13,
+      name: "HP Core i3 11th Gen - (8 GB/512 GB SSD/Windows 11 Home) 15s-du3563TU Thin and Light Laptop",
+      rating: "5",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 43490,
+      img: "https://rukminim1.flixcart.com/image/312/312/kbqu4cw0/computer/t/d/f/hp-original-imaftyzafphshjge.jpeg?q=70",
+    },
+
+    {
+      id: 14,
+      name: "Lenovo IdeaPad 3 Core i3 11th Gen - (8 GB/512 GB SSD/Windows 10 Home) 15ITL6 Thin and Light Laptop",
+      rating: "4.2",
+      d1: "AMD  Dual Core Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "512 GB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 43990,
+      img: "https://rukminim1.flixcart.com/image/312/312/krdtlzk0/computer/k/z/z/na-thin-and-light-laptop-lenovo-original-imag56ugmfkzgzkj.jpeg?q=70",
+    },
+
+    {
+      id: 15,
+      name: "HP Ryzen 3 Dual Core 3250U - (8 GB/256 GB SSD/Windows 10 Home) 15s-GY0501AU Thin and Light Laptop",
+      rating: "4.7",
+      d1: "Ryzen Hexa Processor ",
+      d2: "8 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "39.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 38990,
+      img: "https://rukminim1.flixcart.com/image/312/312/k9d3p8w0/computer/c/a/h/asus-na-laptop-original-imafr6cbfurgkspg.jpeg?q=70",
+    },
+
+    {
+      id: 16,
+      name: "ASUS VivoBook 15 (2021) Core i3 10th Gen - (8 GB/512 GB SSD/Windows 11 Home) X515JA-EJ362WS Thin and L...",
+      rating: "4.5",
+      d1: "AMD Ryzen 5 Hexa Processor ",
+      d2: "16 GB DDR4 RAM",
+      d3: "64 bit Windows 10 Oprating System",
+      d4: "1 TB SSD",
+      d5: "30.62 cm (15.6 inch) DIsplay",
+      d6: "1 Year Onsite Warranty ",
+      price: 40990,
+      img: "https://rukminim1.flixcart.com/image/312/312/ku4ezrk0/computer/f/a/s/14iil05-thin-and-light-laptop-lenovo-original-imag7antbzhywr4z.jpeg?q=70",
+    },
+  ];
+
+
+
+
+  let id = JSON.parse(localStorage.getItem("itemsId"));
+
+  let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
+  let Select_data = data.filter(function (item) {
+    return item.id == id;
+  });
+
+  let main = document.getElementById("main");
+  let BtnDiv = document.createElement("div");
+  BtnDiv.id = "btndv";
+  function Getdata() {
+    // main.innerHTML = "";
+    let Disdiv = document.getElementById("disdv");
+    let imgDiv = document.getElementById("imgdv");
+
+    Select_data.forEach((prodt) => {
+      let img = document.createElement("img");
+      img.src = prodt.img;
+
+      let name = document.createElement("h2");
+      name.innerText = prodt.name;
+
+      let price = document.createElement("h3");
+      price.innerHTML =  `₹  ${prodt.price} <img id="logo" src= Images/assured.png>` 
+
+      let rating = document.createElement("h4");
+      rating.innerHTML = prodt.rating + " ★";
+      rating.id = "rating";
+
+      let d1 = document.createElement("p");
+      d1.innerText = "• " + prodt.d1;
+
+      let d2 = document.createElement("p");
+      d2.innerText = "• " + prodt.d2;
+
+      let d3 = document.createElement("p");
+      d3.innerText = "• " + prodt.d3;
+
+      let d4 = document.createElement("p");
+      d4.innerText = "• " + prodt.d4;
+
+      let d5 = document.createElement("p");
+      d5.innerText = "• " + prodt.d5;
+
+      let d6 = document.createElement("p");
+      d6.innerText = "• " + prodt.d6;
+
+      let AddCartbtn = document.createElement("button");
+      AddCartbtn.innerText = "Add to cart";
+      AddCartbtn.id = "AdBTn";
+
+      let Buybtn = document.createElement("button");
+      Buybtn.innerText = "Buy Now";
+      Buybtn.id = "ByBTn";
+
+      imgDiv.append(img, BtnDiv);
+      Disdiv.append(name, rating, price, d1, d2, d3, d4, d5, d6);
+      BtnDiv.append(AddCartbtn, Buybtn);
+      main.append(imgDiv, Disdiv);
+
+      AddCartbtn.addEventListener("click", () => {
+        let mili = false;
+        cart_ids_arr.map((e) => {
+          if (e == id) {
+            alert("Item is already in cart");
+            mili = true;
+          }
+        });
+        if (!mili) {
+          cart_ids_arr.push(id);
+          localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
+        }
+        let item_cart = document.getElementById("cart-item");
+        let len = cart_ids_arr.length;
+        item_cart.innerText = len;
+      });
+    });
+  }
+  Getdata();
+
+</script>
+
+<script type="module">
+  import { navbar, footer } from "./Components/nav_foot.js";
+
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+
+  let last = document.querySelector("footer");
+  last.innerHTML = footer();
+
+  let slider = document.querySelector(".slider");
+  let item_cart = document.getElementById("cart-item");
+  let len = cart_ids_arr.length;
+  item_cart.innerText = len;
+</script>

@@ -20,7 +20,7 @@
       box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%);
       font-weight: 100;
       height: 40px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
     .second-header span:hover {
       cursor: pointer;
@@ -38,13 +38,22 @@
       margin-right: 5px;
     }
     .left-box {
+      /* border: 2px solid yellow; */
+      height: 700px;
       width: 20%;
-      /* border: 2px solid red; */
+      padding: 10px;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 20px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
     .righ-box {
       width: 80%;
       /* border: 2px solid brown; */
     }
+
     ul {
       margin-left: 10px;
       padding: 10px;
@@ -69,7 +78,7 @@
     }
     .imgdiv {
       width: 24%;
-      border: 1px solid teal;
+      /* border: 1px solid teal; */
     }
     .imgdiv img {
       width: 100%;
@@ -77,16 +86,17 @@
     }
     .descdiv {
       width: 50%;
-      border: 1px solid teal;
+      /* border: 1px solid teal; */
     }
     .descdiv span {
       background-color: green;
       padding: 3px;
       border-radius: 4px;
+      color: white;
     }
     .pricediv {
       width: 22%;
-      border: 1px solid teal;
+      /* border: 1px solid teal; */
       font-weight: bolder;
       font-size: 22px;
     }
@@ -94,8 +104,59 @@
       width: 77px;
       height: 22px;
     }
+    .category input {
+      margin: 20px;
+    }
+    #sc {
+      margin-top: 20px;
+    }
+    .box {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      height: 300px;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .box:hover {
+      border: 2px solid grey;
+    }
+
+    #spinner {
+      visibility: hidden;
+      width: 80px;
+      height: 80px;
+
+      border: 2px solid #f3f3f3;
+      border-top: 3px solid #f25a41;
+      border-radius: 100%;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      animation: spin 1s infinite linear;
+      padding: 20px;
+    }
+
+    /* @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    } */
+
+    #spinner.show {
+      visibility: visible;
+    }
   </style>
   <body>
+    <div id="spinner">Please Wait</div>
+
     <header></header>
     <div class="second-header">
       <span
@@ -115,24 +176,43 @@
     <!-- container -->
     <section>
       <div class="container">
+        <!-- <div class="left-box"> -->
         <div class="left-box">
-          <h3>Filters</h3>
+          <h3>Filter</h3>
+
           <div class="category">
-            <p>category</p>
-            <ul>
-              <li><button>Electronics</button></li>
-              <li><button>Jewelery</button></li>
-              <li><button>men's clothing</button></li>
-              <li><button>women's clothing</button></li>
-            </ul>
+            <h4 id="sc">Select category</h4>
+            <form>
+              <label for="all">
+                <input type="checkbox" id="all" name="accept" value="yes" />
+                All
+              </label>
+              <br />
+              <label for="dc">
+                <input type="checkbox" id="dc" name="accept" value="yes" />
+                Digital camera
+              </label>
+              <br />
+              <label for="hp">
+                <input type="checkbox" id="hp" name="accept" value="yes" />
+                Headphones
+              </label>
+              <br />
+              <label for="tv">
+                <input type="checkbox" id="tv" name="accept" value="yes" />
+                Tv s
+              </label>
+              <br />
+              <label for="ha">
+                <input type="checkbox" id="ha" name="accept" value="yes" />
+                Home Audio
+              </label>
+            </form>
           </div>
         </div>
+
         <div class="righ-box">
-          <div class="right-box-header">
-            <span><h4>Sort By</h4></span>
-            <span>Price-Low to High</span>
-            <span>Price-High to Low</span>
-          </div>
+          <div class="right-box-header"></div>
           <div class="display-items"></div>
         </div>
       </div>
@@ -141,41 +221,94 @@
 </html>
 <script type="module">
   import { navbar, footer } from "./Components/nav_foot.js";
-
+  import { showitems } from "./JS/scripts/display.js";
   let header = document.querySelector("header");
   header.innerHTML = navbar();
-</script>
+  let cart_ids_arr = JSON.parse(localStorage.getItem("skuarray")) || [];
+  let item_cart = document.getElementById("cart-item");
+  let len = cart_ids_arr.length;
+  item_cart.textContent = len;
 
-<script>
   let displaybox = document.querySelector(".display-items");
 
-  showitems();
-  async function showitems() {
-    console.log("here");
-    let url = `https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))?apiKey=3b1upy8OYY1QZCEFx6LVDJgT&sort=name.asc&show=name,salePrice,image,customerReviewAverage,features.feature&pageSize=10&format=json`;
-    let res = await fetch(url);
-    let data = await res.json();
-    let arr = data.products;
-    console.log(data);
-    arr.map(({ name, customerReviewAverage, image, salePrice, features }) => {
-      let box = document.createElement("div");
-      box.className = "box";
+  starting();
 
-      let imgdiv = document.createElement("div");
-      imgdiv.className = "imgdiv";
-      imgdiv.innerHTML = `<img src=${image}>`;
-      let descdiv = document.createElement("div");
-      descdiv.className = "descdiv";
-      descdiv.innerHTML = `<h3>${name}</h2>
-        <span>${customerReviewAverage}★</span>
-        <p>${features[0].feature}</p>`;
-      let pricediv = document.createElement("div");
-      pricediv.className = "pricediv";
-      let p = Math.floor(salePrice * 70);
-      pricediv.innerHTML = `<p>Price:₹${p}<img src="Images/assured.png"></p>`;
+  function starting() {
+    setTimeout(() => {
+      showitems("abcat0401000");
+    }, 1000);
+    setTimeout(() => {
+      showitems("abcat0204000");
+    }, 2000);
+    setTimeout(() => {
+      showitems("pcmcat241600050001");
+    }, 3000);
+    setTimeout(() => {
+      showitems("abcat0101000");
+    }, 5000);
+  }
 
-      box.append(imgdiv, descdiv, pricediv);
-      displaybox.append(box);
-    });
+  //camera category
+  var dc = document.querySelector("#dc");
+  var hp = document.querySelector("#hp");
+  var tv = document.querySelector("#tv");
+  var ha = document.querySelector("#ha");
+  var all = document.querySelector("#all");
+
+  all.addEventListener("change", function () {
+    clear(hp, tv, ha, dc);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      starting();
+    } else {
+    }
+  });
+
+  dc.addEventListener("change", function () {
+    clear(hp, tv, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0401000");
+    } else {
+    }
+  });
+
+  //Headpone category
+  hp.addEventListener("change", function () {
+    clear(dc, tv, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0204000");
+    } else {
+    }
+  });
+  tv.addEventListener("change", function () {
+    clear(hp, dc, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0101000");
+    } else {
+    }
+  });
+
+  ha.addEventListener("change", function () {
+    clear(tv, dc, hp, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("pcmcat241600050001");
+    } else {
+    }
+  });
+
+  function clear(a, b, c, d) {
+    a.checked = false;
+    b.checked = false;
+    c.checked = false;
+    d.checked = false;
   }
 </script>
