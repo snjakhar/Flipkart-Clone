@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Page</title>
-    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="css/product.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link rel="stylesheet" href="/Srinivas Code/Styles/navbar.css" />
   </head>
- 
+
   <body>
     <header></header>
 
@@ -89,7 +89,7 @@
   </body>
 </html>
 <script type="module">
-  import { navbar, footer } from "./Components/nav_foot.js";
+  import { navbar, footer } from "./Srinivas Code/Components/nav_foot.js";
 
   let header = document.querySelector("header");
   header.innerHTML = navbar();
@@ -102,11 +102,5 @@
 
   let len = cart_ids_arr.length;
   item_cart.innerText = len;
-
-
 </script>
-<script type="module" src="akhil_js/product.js" type="module">
-import {data} from "./JS/items_data.js"
-console.log(data)
-</script>
-
+<script src="./akhil_js/product.js" ></script>

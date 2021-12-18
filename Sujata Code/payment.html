@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="/Srinivas Code/Styles/navbar.css">
+  </head>
+  <body>
+    <header></header>
+    <div id="payment-main-container">
+      <div id="left-container">
+        <!-- <div id="box">
+          <span><button id="btnone">LOGIN</button></span>
+          <span><button id="btntwo">CHANGE</button></span>
+        </div> -->
+
+        <div id="delevery-address-container">
+          <h4 id="delivery-heading">DELIVERY ADDRESS</h4>
+          <span class="add-new-add"
+            ><input type="radio" name="gender" value="male" />ADD A NEW
+            ADDRESS</span
+          >
+          <div>
+            <br />
+            <button id="use-my-current-location">
+              Use my current location
+            </button>
+            <br />
+            <br />
+            <br />
+
+            <input type="text" placeholder="Name" class="input-style" />
+            <input
+              type="text"
+              placeholder="10-digit-mobile-number"
+              class="input-style"
+            />
+            <br />
+            <br />
+            <input type="text" placeholder="Pin code" class="input-style" />
+            <input type="text" placeholder="Locality" class="input-style" />
+            <br />
+            <br />
+            <textarea
+              name=""
+              id=""
+              cols="57"
+              rows="5"
+              placeholder="Address (Area and city)"
+            ></textarea>
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="(City/District/town)"
+              class="input-style"
+            />
+
+            <select name="" id="" class="input-style">
+              <option value="">--Select--State</option>
+              <option value="">Haynana</option>
+              <option value="">Chandigarh</option>
+              <option value="">Delhi</option>
+              <option value="">Mumbai</option>
+            </select>
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="Landmark (Optional)"
+              class="input-style"
+            />
+            <input
+              type="text "
+              placeholder="Alternate phone (Optional)"
+              class="input-style"
+            />
+            <br /><br />
+            <h6>Address Type</h6>
+            <span class="add-new-add"
+              ><input type="radio" name="gender" value="male" />Hone (All day
+              delivery) ADDRESS</span
+            >
+
+            <span class="add-new-add"
+              ><input type="radio" name="gender" value="male" />Work (Delivery
+              between 10AM-5PM) ADDRESS</span
+            >
+
+            <br /><br />
+            <button id="save-and-delivery-here">Save and Delivery Here</button>
+            <br />
+            <br />
+            <!-- payment options -->
+
+            <input
+              type="text"
+              name=""
+              id="credit-debit"
+              placeholder="Credit/Debit"
+            />
+            <br />
+            <br />
+            <input type="text" placeholder="CVV" class="cvd" />
+            <input type="text" placeholder="DATE" class="cvd" />
+
+            <button id="pay">PAY</button>
+            <br /><br /><br /><br />
+          </div>
+        </div>
+      </div>
+      <div id="right-container"></div>
+     
+    </div>
+    <footer></footer>
+  </body>
+</html>
+<script type="module">
+   import { navbar, footer } from "../Srinivas Code/Components/nav_foot.js";
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+  let last = document.querySelector("footer");
+ 
+ 
+</script>

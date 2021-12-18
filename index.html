@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flipkart</title>
-    <script src="JS/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" href="Styles/slick-theme.css" />
-    <link rel="stylesheet" href="Styles/slick.css" />
-    <link rel="stylesheet" href="Styles/navbar.css" />
+    <script src="Srinivas Code/JS/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="Srinivas Code/Styles/slick-theme.css" />
+    <link rel="stylesheet" href="Srinivas Code/Styles/slick.css" />
+    <link rel="stylesheet" href="Srinivas Code/Styles/navbar.css" />
     <script
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
@@ -19,7 +19,7 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="Styles/Mainpage.css" />
+    <link rel="stylesheet" href="Srinivas Code/Styles/Mainpage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,9 +28,151 @@
     />
   </head>
   <style>
-    #electronics:hover{
+    #electronics:hover {
       transform: scale(1.3);
     }
+    /* sujata  code below*/
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: auto;
+
+      /* border: 1px solid rgb(20, 6, 6); */
+      width: 45%;
+      height: 470px;
+    }
+
+    .modal-content {
+      display: flex;
+    }
+
+    #close {
+      color: white;
+      float: right;
+      font-size: 70px;
+
+      position: relative;
+      left: 60px;
+      bottom: 40px;
+    }
+    #left-content {
+      height: 470px;
+      /* border: 1px solid yellow; */
+      background-color: #2874f0;
+      /* flex-grow: 2; */
+      width: 45%;
+    }
+    #right-content {
+      height: 470px;
+      /* border: 1px solid green; */
+      background-color: white;
+      /* flex-grow: 2; */
+      width: 55%;
+    }
+    #close:hover,
+    #close:focus {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    /* left part css start----------------------------------------- */
+    .one {
+      padding: 10px 20px;
+      color: white;
+    }
+    /* left part css end------------------------------------------- */
+
+    /* right part css start-------------------------------------------- */
+
+    #email-or-phone {
+      margin-top: 50px;
+      margin-left: 40px;
+      /* padding: 8px 10px 10px 0px; */
+      height: 40px;
+      width: 90%;
+      border: 1px solid rgb(155, 151, 151);
+      border-top: none;
+      border-left: none;
+
+      border-right: none;
+    }
+
+    #password {
+      margin-left: 40px;
+      /* padding: 8px 60px 10px 0px; */
+      height: 40px;
+      width: 90%;
+      margin-top: 20px;
+      border: 1px solid rgb(155, 151, 151);
+      border-top: none;
+      border-left: none;
+
+      border-right: none;
+    }
+
+    #btnlogin {
+      margin-left: 40px;
+      padding: 10px 20px;
+      height: 40px;
+      width: 93%;
+      color: white;
+      margin-top: 20px;
+      background-color: #fb641b;
+      border-style: none;
+    }
+
+    #requestotp {
+      margin-left: 40px;
+      padding: 10px 20px;
+      height: 40px;
+      width: 93%;
+      margin-top: 50px;
+      color: #2874f0;
+      background-color: whitesmoke;
+      border-style: initial;
+      cursor: pointer;
+      border-bottom: 2px solid rgb(155, 151, 151);
+    }
+
+    #newtoflipcart {
+      margin-left: 40px;
+      padding: 10px 20px;
+      height: 40px;
+      width: 93%;
+      margin-top: 50px;
+      color: #2874f0;
+      border-style: none;
+      background-color: whitesmoke;
+      cursor: pointer;
+    }
+
+    #btn {
+      background-color: white;
+      color: blue;
+
+      font-size: 16px;
+      border: none;
+      padding: 5px 40px;
+      font-family: 16px roboto Arial, Helvetica, sans-serif;
+    }
+    /* sujata code above------------------------------------------------- */
   </style>
   <body>
     <!-- Header-Section -->
@@ -56,7 +198,7 @@
           <h5>Fashion</h5>
         </div>
         <div id="electronics" class="category-col">
-          <a href="product.html"><img src="Mainpage-images/hp5.png" /></a>
+          <a href="./Akhil Code/product.html"><img src="Mainpage-images/hp5.png" /></a>
           <h5>Electronics</h5>
         </div>
         <div class="category-col">
@@ -392,6 +534,43 @@
           </div>
         </div>
       </div>
+      <!-- below sujata -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div id="left-content">
+            <h1 class="one">Login</h1>
+            <h3 class="one">
+              Get access to your Orders, Wishlist and Recommendations
+            </h3>
+            <img src="login_img_c4a81e.png" alt="" />
+          </div>
+          <div id="right-content">
+            <div>
+              <input
+                type="text"
+                id="email-or-phone"
+                placeholder="Enter username"
+              />
+              <br />
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+              />
+              <button id="btnlogin">Login</button>
+
+              <button id="requestotp">Request OTP</button>
+              <a href="sujata code/signup.html">
+                <button id="newtoflipcart">
+                  New to flipkart? create an account
+                </button>
+              </a>
+            </div>
+          </div>
+          <span id="close">&times;</span>
+        </div>
+      </div>
+      <!-- Above Sujata -->
     </section>
 
     <!-- Footer -->
@@ -400,7 +579,7 @@
 </html>
 
 <script type="module">
-  import { navbar, footer } from "./Components/nav_foot.js";
+  import { navbar, footer } from "./Srinivas Code/Components/nav_foot.js";
 
   let header = document.querySelector("header");
   header.innerHTML = navbar();
@@ -409,7 +588,70 @@
   last.innerHTML = footer();
 
   let slider = document.querySelector(".slider");
+  // below login code---------------------------------------
+  var modal = document.getElementById("myModal");
+  var sp = document.getElementById("close");
+  var Lbtn = document.getElementById("btn");
+  // Lbtn.onclick = function () {
+  //   modal.style.display = "block";
+  // };
+  Lbtn.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
+  // Lbtn.span.onclick = function () {
+  //   modal.style.display = "none";
+  // };
 
+  sp.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // login code below
+  let btnlogin = document.getElementById("btnlogin");
+  btnlogin.addEventListener("click", function () {
+    Login();
+  });
+  async function Login() {
+    let login_data = {
+      password: document.getElementById("password").value,
+      username: document.getElementById("email-or-phone").value,
+    };
+    login_data = JSON.stringify(login_data);
+
+    let login_api = `https://masai-api-mocker.herokuapp.com/auth/login`;
+    let response = await fetch(login_api, {
+      method: "POST",
+      body: login_data,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let data = await response.json();
+    console.log("data", data);
+    let username = document.getElementById("email-or-phone").value;
+    getProfile(username, data.token);
+  }
+
+  async function getProfile(username, token) {
+    let api = `https://masai-api-mocker.herokuapp.com/user/${username}`;
+    let response = await fetch(api, {
+      //default method is get request
+      //so don't have to write method as get
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    let data = await response.json();
+    console.log("data", data);
+  }
+  // above login code--------------------------------------
   $(".slider").slick({
     autoplay: true,
     autoplaySpeed: 1500,

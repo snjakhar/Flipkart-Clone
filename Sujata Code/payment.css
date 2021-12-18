@@ -1,0 +1,106 @@
+body {
+  background-color: whitesmoke;
+}
+#payment-main-container {
+  display: flex;
+  width: 90%;
+  /* border: 1px solid yellow; */
+  margin: auto;
+  column-gap: 10px;
+  height: 70px;
+}
+#box {
+  display: flex;
+}
+
+#left-container {
+  /* border: 1px solid blue; */
+  width: 60%;
+  padding: 10px;
+  background-color: white;
+}
+#right-container {
+  /* border: 1px solid salmon; */
+  width: 40%;
+  height: 500px;
+}
+#btnone {
+  /* border: 1px solid pink; */
+  /* width: 50%; */
+  /* height: 20px; */
+  padding: 16px 24px;
+  background-color: white;
+  color: rgb(110, 105, 105);
+  font-weight: bold;
+}
+#btntwo {
+  /* width: 50%; */
+  /* height: 20px; */
+  /* border: 1px solid red; */
+  padding: 0px 32px;
+  padding: 16px 24px;
+  color: blue;
+  background-color: white;
+  margin-left: 500px;
+  font-weight: bold;
+}
+#delevery-address-container {
+  height: 50px;
+  background-color: #2874f0;
+  width: 100%;
+}
+#delivery-heading {
+  padding: 20px;
+  color: white;
+}
+.add-new-add {
+  color: #2874f0;
+}
+#use-my-current-location {
+  width: 30%;
+  height: 50px;
+  background-color: #2874f0;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+}
+#save-and-delivery-here {
+  width: 40%;
+  height: 40px;
+  background-color: orangered;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 30px;
+}
+.input-style {
+  width: 30%;
+  height: 40px;
+}
+#credit-debit {
+  width: 40%;
+  height: 40px;
+  background-color: white;
+  border-style: none;
+  border-radius: 5px;
+  color: blue;
+  margin-bottom: 30px;
+}
+.cvd {
+  width: 20%;
+  height: 40px;
+  background-color: white;
+  border-style: none;
+  border-radius: 5px;
+  color: black;
+  margin-bottom: 30px;
+}
+#pay {
+  width: 20%;
+  height: 40px;
+  background-color: orangered;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 30px;
+}

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link rel="stylesheet" href="/Srinivas Code/Styles/navbar.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -216,7 +216,7 @@
 </html>
 <script type="module">
   
-   import {data} from "./JS/items_data.js"
+   import {data} from "../Srinivas Code/JS/items_data.js"
 
   let id = JSON.parse(localStorage.getItem("itemsId"));
 
@@ -301,7 +301,7 @@
 </script>
 
 <script type="module">
-  import { navbar, footer } from "./Components/nav_foot.js";
+  import { navbar, footer } from "../Srinivas Code/Components/nav_foot.js";
 
   let header = document.querySelector("header");
   header.innerHTML = navbar();

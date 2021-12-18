@@ -289,7 +289,7 @@ function showData(arr) {
 
     main.addEventListener('click',function(){
     localStorage.setItem("itemsId",JSON.stringify(item.id));
-    window.location.href='itemDetail.html';
+    window.location.href='../Gopala/itemDetail.html';
      
     })
 

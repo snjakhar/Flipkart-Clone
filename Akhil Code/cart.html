@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/navbar.css" />
+    <link rel="stylesheet" href="/Srinivas Code/Styles/navbar.css" />
 
     <link
       rel="stylesheet"
@@ -130,7 +130,7 @@
             <p>Delivery Charges <span id="dl">₹0</span><span>₹</span></p>
             <p>Total Amount <span id="amount">1035</span><span>₹</span></p>
 
-            <button id="checkout-button">Checkout</button>
+           <a href="../sujata code/payment.html"> <button id="checkout-button">Checkout</button></a>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
   </body>
 </html>
 <script type="module">
-  import { navbar, footer } from "./Components/nav_foot.js";
+  import { navbar, footer } from "../Srinivas Code/Components/nav_foot.js";
 
   let header = document.querySelector("header");
   header.innerHTML = navbar();
@@ -154,7 +154,7 @@
   
 </script>
 <script type="module">
-  import {data} from "./JS/items_data.js"
+  import {data} from "../Srinivas Code/JS/items_data.js"
   let cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
   let left = document.querySelector(".left");
   let sum = 0;
