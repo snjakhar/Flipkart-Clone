@@ -19,6 +19,7 @@
       display: flex;
       width: 100%;
       justify-content: space-evenly;
+      padding-top: 20px;
     }
     .left {
       width: 70%;
@@ -29,13 +30,10 @@
     }
     .right {
       width: 25%;
-      
+
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       border: none;
-     
-     
-      
     }
     .left-header {
       /* border: 1px solid grey; */
@@ -48,7 +46,7 @@
     }
     .img-div {
       width: 20%;
-      height: 200px;
+      height: 80%;
       /* border: 1px solid blue; */
     }
     .img-div img {
@@ -67,9 +65,12 @@
     }
     .price-detail {
       padding: 20px;
-      font-weight: bolder;
-      font-size: 24px;
+      font-weight: bold;
+      font-size: 18px;
       
+    }
+    .price-detail p{
+      line-height: 50px;
     }
     .price-detail span {
       float: right;
@@ -98,8 +99,8 @@
       border: none;
       cursor: pointer;
     }
-    .rm_btn:hover{
-      background-color: brown; 
+    .rm_btn:hover {
+      background-color: brown;
     }
     #checkout-button {
       width: 240px;
@@ -109,6 +110,10 @@
       margin-left: 20%;
       border-radius: 10px;
       font-weight: bolder;
+    }
+    .right-header h3 {
+      text-align: center;
+      margin-top: 10px;
     }
   </style>
   <body>
@@ -122,8 +127,8 @@
           <h3>PRICE DETAILS</h3>
           <div class="price-detail">
             <p>Price <span id="price">1000</span></p>
-            <p>Delivery Charges <span id="dl">₹0</span></p>
-            <p>Total Amount <span id="amount">1035</span></p>
+            <p>Delivery Charges <span id="dl">₹0</span><span>₹</span></p>
+            <p>Total Amount <span id="amount">1035</span><span>₹</span></p>
 
             <button id="checkout-button">Checkout</button>
           </div>
@@ -377,7 +382,7 @@
     amount.innerText = "";
     dl.innerText = "";
     sum = 0;
-   
+
     arr.map((id) => {
       let id_data = data.filter((item) => {
         return id == item.id;
@@ -400,8 +405,8 @@
       descdiv.className = "desc-div";
 
       imgdiv.innerHTML = `<img src=${e.img}>`;
-      descdiv.innerHTML = `<h2>${e.name}</h2>
-        <h2>₹${e.price}<img src=Images/assured.png><h2>`;
+      descdiv.innerHTML = `<h3>${e.name}</h3>
+        <h3>₹${e.price}<img src=Images/assured.png><h2>`;
       let p = e.price;
       // Quantity Inc Dec Buttons
 
