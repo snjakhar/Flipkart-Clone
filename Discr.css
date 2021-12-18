@@ -1,55 +1,95 @@
-*{
+* {
     font-family: sans-serif;
-    background-color: #E3F2FD;
-}
-#div{
+  }
+  #main {
     display: flex;
-    border: 1px solid;
-   
-}
-#imgDiv{
-    margin-top: 200px;
-    margin-left: 5%;
-    border: 1px solid;
-}
-#di_div{
-    width: 50%;
-    margin-left: 5%;
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  #imgdv {
     margin-top: 100px;
-    padding: 3%;
-    border: 1px solid;
-}
-#review{
+    /* border: 1px solid; */
+    width: 100%;
+    padding: 10px;
+  }
+  img {
+    width: 100%;
+  }
+  #disdv {
+    padding: 10px;
+    line-height: 40px;
+    margin-left: 10%;
+    margin-top: 50px;
+    /* border: 1px solid; */
+  }
+  #rating {
     background-color: green;
     color: whitesmoke;
-    width: 30px;
-    border-radius: 2px;
+    width: 50px;
     text-align: center;
-}
-p{
-    line-height: 25px;
-}
-#name{
-    line-height: 30px;
-}
-#AdBTn{
-    background-color: #FFCA28;
+    border-radius: 5px;
+  }
+  #btndv {
+    padding: 10px;
+    margin-left: 15%;
+    margin-top: 20px;
+    display: flex;
+  }
+  #AdBTn {
+    background-color: #ffca28;
     border: 0;
-    width: 100px;
+    width: 200px;
     height: 50px;
     font-size: 18px;
-    
-}
-#ByBTn{
-    background-color: #FF7043;
+    border-radius: 5px;
+  }
+  #AdBTn:hover {
+    background-color: brown;
+  }
+  #ByBTn {
+    background-color: #ff7043;
     border: 0;
-    width: 100px;
+    width: 200px;
     height: 50px;
     margin-left: 20px;
     font-size: 18px;
-}
-#AbDv{
-    padding: 10px;
-    margin-left: 25%;
-    margin-top: 30px;
-}
+    border-radius: 5px;
+  }
+  #spc {
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 30px;
+    /* border: .5px solid; */
+  }
+  #rght1 {
+    line-height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 30px;
+  }
+  #lft1 {
+    line-height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 30px;
+    margin-left: 10%;
+  }
+  #OS {
+    line-height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 30px;
+    margin-left: 10%;
+  }
+  span {
+    float: right;
+  }
+  #logo {
+    width: 77px;
+    height: 23px;
+  }
