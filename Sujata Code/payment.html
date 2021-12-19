@@ -99,10 +99,10 @@
             />
             <br />
             <br />
-            <input type="text" placeholder="CVV" class="cvd" />
+            <input type="password" placeholder="CVV" class="cvd" />
             <input type="text" placeholder="DATE" class="cvd" />
 
-            <button id="pay">PAY</button>
+            <a href="../Gopala/success.html"><button id="pay">PAY</button></a>
             <br /><br /><br /><br />
           </div>
           <footer></footer>
@@ -118,4 +118,9 @@
   header.innerHTML = navbar();
   let last = document.querySelector("footer");
   last.innerHTML = footer();
+</script>
+<script>
+  let btn = document.getElementById("save-and-delivery-here").addEventListener("click", function(){
+    alert("Details Saved Succesfully.......")
+  })
 </script>

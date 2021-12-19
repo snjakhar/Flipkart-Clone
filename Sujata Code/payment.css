@@ -91,3 +91,11 @@ body {
   color: white;
   margin-bottom: 30px;
 }
+#right-container{
+  border: 1px solid red;
+  float: right;
+  height: 500px;
+  width: 35%;
+  margin-right: 30px;
+  margin-top: 20px;
+}
