@@ -176,6 +176,8 @@
       });
       sum += id_data[0].price;
       price.innerText = "₹" + sum;
+      let total=sum+135;
+      localStorage.setItem("total_amount",JSON.stringify(total))
       amount.innerText = sum + 135;
       dl.innerText = 135;
       dispplay_id_data(id_data);
@@ -209,6 +211,8 @@
         sum -= p;
         price.innerText = "₹" + sum;
         amount.innerText = sum + 135;
+        let total=sum+135;
+        localStorage.setItem("total_amount",JSON.stringify(total))
       });
 
       let qty = document.createElement("span");
@@ -229,6 +233,8 @@
         sum += p;
         price.innerText = "₹" + sum;
         amount.innerText = sum + 135;
+        let total=sum+135;
+        localStorage.setItem("total_amount",JSON.stringify(total))
       });
       // remove Button
       let rm_btn = document.createElement("button");
@@ -246,6 +252,7 @@
         localStorage.setItem("itemsids", JSON.stringify(cart_ids_arr));
         cart_ids_arr = JSON.parse(localStorage.getItem("itemsids")) || [];
         getLocalStorage(cart_ids_arr);
+
       });
 
       descdiv.append(decbtn, qty, incbtn, rm_btn);
