@@ -107,6 +107,11 @@
   let item_cart = document.getElementById("cart-item");
   let len = cart_ids_arr.length;
   item_cart.textContent = len;
+
+  let d_link = document.getElementById("d_link");
+  d_link.href = "cart.html";
+
+
 </script>
 <script>
   let cart_ids_arr = JSON.parse(localStorage.getItem("skuarray")) || [];

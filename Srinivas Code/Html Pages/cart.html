@@ -99,18 +99,18 @@
       cursor: pointer;
     }
     .rm_btn:hover {
-      background-color:#2874f0;
+      background-color: #2874f0;
     }
     #checkout-button {
       width: 240px;
       height: 40px;
-      background-color:  #2874f0;
+      background-color: #2874f0;
       color: white;
       margin-left: 20%;
       border-radius: 10px;
       font-weight: bolder;
     }
-    #checkout-button:hover{
+    #checkout-button:hover {
       background-color: yellow;
       color: black;
     }
@@ -133,7 +133,9 @@
             <p>Delivery Charges <span id="dl">₹0</span><span>₹</span></p>
             <p>Total Amount <span id="amount">1035</span><span>₹</span></p>
 
-          <a href="../../Sujata Code/payment.html">  <button id="checkout-button">Checkout</button></a>
+            <a href="../../Sujata Code/payment.html">
+              <button id="checkout-button">Checkout</button></a
+            >
           </div>
         </div>
       </div>
@@ -154,6 +156,8 @@
 
   let item_cart = document.getElementById("cart-item");
   item_cart.innerText = "";
+
+  
 </script>
 
 <script>
@@ -190,31 +194,10 @@
     console.log(array);
   }
 
-  // getLocalStorage(cart_ids_arr);
-
-  // function getLocalStorage(arr) {
-  //   left.innerHTML = "";
-  //   price.innerText = "";
-  //   amount.innerText = "";
-  //   dl.innerText = "";
-  //   sum = 0;
-
-  //   arr.map((id) => {
-  //     let id_data = data.filter((item) => {
-  //       return id == item.id;
-  //     });
-  //     sum += id_data[0].price;
-  //     price.innerText = "₹" + sum;
-  //     amount.innerText = sum + 135;
-  //     dl.innerText = 135;
-  //     dispplay_id_data(id_data);
-  //   });
-  // }
-
   function dispplay_id_data(array) {
     array.map((e) => {
-      sum += Math.floor(e.salePrice*70);
-      
+      sum += Math.floor(e.salePrice * 70);
+
       price.innerText = "₹" + sum;
       amount.innerText = sum + 135;
       dl.innerText = 135;
@@ -225,10 +208,10 @@
       imgdiv.className = "img-div";
       let descdiv = document.createElement("div");
       descdiv.className = "desc-div";
-      let p = Math.floor(e.salePrice*70);
+      let p = Math.floor(e.salePrice * 70);
       imgdiv.innerHTML = `<img src=${e.image}>`;
       descdiv.innerHTML = `<h3>${e.name}</h3>
-        <h3>₹${p}<img src=../Mainpage-images/assured.png><h2>`;
+        <h3>₹${p}<img src=/../Mainpage-images/assured.png><h2>`;
 
       // Quantity Inc Dec Buttons
 
