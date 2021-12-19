@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .container {
+      margin: 40px;
+      display: grid;
+      grid-template-columns: 40% 40%;
+      grid-template-rows: 400px auto;
+      padding-left: 10%;
+      gap: 20px;
+      grid-template-areas:
+        "l r"
+        "b b";
+    }
+    .left {
+      grid-area: l;
+      /* border: 2px solid teal; */
+    }
+    .right {
+      grid-area: r;
+      /* border: 2px solid teal; */
+      /* margin-top: 20px; */
+    }
+    .bottom {
+      grid-area: b;
+      /* border: 2px solid teal; */
+      /* margin-top: 20px; */
+    }
+    .left img {
+      width: 100%;
+      height: 100%;
+    }
+    .btn1 {
+      margin-left: 30%;
+      margin-top: 10%;
+      padding: 20px;
+      background-color: rgb(40, 116, 240);
+      color: white;
+      border-radius: 10px;
+      font-weight: bolder;
+    }
+    .btn1:hover {
+      background-color: yellow;
+      color: rgb(40, 116, 240);
+    }
+    .right span{
+        padding:7px;
+        background-color: green;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: block;
+        width: 45px;
+
+    }
+    .pricetag{
+        font-weight: bolder;
+        line-height: 30px;
+        font-size: 22px;
+    }
+    .pricetag img{
+        width: 80px;
+        height: 22px;
+    }
+    .sortdesc{
+        color: grey;
+    }
+    li{
+        color: grey;
+        line-height: 30px;
+        font-weight: bold;
+    }
+  </style>
+  <body>
+    <header></header>
+
+    <div class="container">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+    </div>
+
+    <footer></footer>
+  </body>
+</html>
+<script type="module">
+  import { navbar, footer } from "../Components/nav_foot.js";
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+  let last = document.querySelector("footer");
+  last.innerHTML = footer();
+
+  let item_cart = document.getElementById("cart-item");
+  let len = cart_ids_arr.length;
+  item_cart.textContent = len;
+</script>
+<script>
+  let cart_ids_arr = JSON.parse(localStorage.getItem("skuarray")) || [];
+  let cont = document.querySelector(".container");
+  let left = document.querySelector(".left");
+  let right = document.querySelector(".right");
+  let bottom = document.querySelector(".bottom");
+
+  let sku = JSON.parse(localStorage.getItem("sku"));
+  let url = `https://api.bestbuy.com/v1/products(sku=${sku})?apiKey=3b1upy8OYY1QZCEFx6LVDJgT&sort=customerReviewAverage.asc&show=customerReviewAverage,features.feature,salePrice,name,sku,image,longDescription,shortDescription&pageSize=1&format=json`;
+  showdata();
+  async function showdata() {
+    right.innerHTML = "";
+    let res = await fetch(url);
+    let data = await res.json();
+    let arr = data.products[0];
+    let p = Math.floor(arr.salePrice * 70);
+    left.innerHTML = `<img src=${arr.image}>`;
+    right.innerHTML = `<h2>${arr.name}</h2>
+    <span>${arr.customerReviewAverage}★</span>
+    <p class="pricetag">₹${p} <img src="../../Mainpage-images/assured.png"> </p>
+    <p class="sortdesc">${arr.shortDescription}</p>
+    `;
+    let btn1 = document.createElement("button");
+    btn1.className = "btn1";
+    btn1.textContent = "Add To Cart";
+
+    // let btn2 = document.createElement("button");
+    // btn2.textContent = "Buy Now";
+    right.append(btn1);
+    for (let i = 0; i < arr.features.length; i++) {
+      let li = document.createElement("li");
+      li.textContent = arr.features[i].feature;
+      bottom.append(li);
+    }
+    let ptag = document.createElement("p");
+    ptag.textContent = arr.longDescription;
+    bottom.append(ptag);
+    btn1.addEventListener("click", () => {
+      let mili = false;
+      cart_ids_arr.map((e) => {
+        if (e == arr.sku) {
+          alert("Item is already in cart");
+          mili = true;
+        }
+      });
+      if (!mili) {
+        cart_ids_arr.push(arr.sku);
+        localStorage.setItem("skuarray", JSON.stringify(cart_ids_arr));
+      }
+      let item_cart = document.getElementById("cart-item");
+      let len = cart_ids_arr.length;
+      item_cart.textContent = len;
+    });
+  }
+</script>

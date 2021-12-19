@@ -12,10 +12,7 @@
     <header></header>
     <div id="payment-main-container">
       <div id="left-container">
-        <!-- <div id="box">
-          <span><button id="btnone">LOGIN</button></span>
-          <span><button id="btntwo">CHANGE</button></span>
-        </div> -->
+       
 
         <div id="delevery-address-container">
           <h4 id="delivery-heading">DELIVERY ADDRESS</h4>
@@ -47,7 +44,7 @@
             <textarea
               name=""
               id=""
-              cols="57"
+              cols="53"
               rows="5"
               placeholder="Address (Area and city)"
             ></textarea>
@@ -110,12 +107,13 @@
             <button id="pay">PAY</button>
             <br /><br /><br /><br />
           </div>
+          <footer></footer>
         </div>
       </div>
       <div id="right-container"></div>
      
     </div>
-    <footer></footer>
+    
   </body>
 </html>
 <script type="module">
@@ -123,6 +121,6 @@
   let header = document.querySelector("header");
   header.innerHTML = navbar();
   let last = document.querySelector("footer");
- 
+  last.innerHTML=footer();
  
 </script>

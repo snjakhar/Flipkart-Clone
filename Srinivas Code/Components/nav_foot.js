@@ -20,7 +20,7 @@ function navbar() {
 
     
     <a href="#">more<i class="fas fa-sort-down"></i></a>
-    <a href="../Akhil Code/cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-item">0<span></a>
+    <a href="../Html Pages/cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-item">0<span></a>
   </div>
 
 

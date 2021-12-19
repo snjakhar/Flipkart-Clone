@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers</title>
+    <link rel="stylesheet" href="../Styles/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .second-header {
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%);
+      font-weight: 100;
+      height: 40px;
+      margin-top: 20px;
+    }
+    .second-header span:hover {
+      cursor: pointer;
+    }
+    .fa-sort-down {
+      color: grey;
+    }
+
+    /* container */
+    .container {
+      display: flex;
+      width: 100%;
+      height: auto;
+      gap: 20px;
+      margin-right: 5px;
+    }
+    .left-box {
+      /* border: 2px solid yellow; */
+      height: 700px;
+      width: 20%;
+      padding: 10px;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 20px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+    .righ-box {
+      width: 80%;
+      /* border: 2px solid brown; */
+    }
+
+    ul {
+      margin-left: 10px;
+      padding: 10px;
+    }
+    ul button {
+      text-decoration: none;
+      background-color: transparent;
+      border: none;
+      line-height: 40px;
+    }
+    .right-box-header {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Display Items */
+    .box {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px;
+    }
+    .imgdiv {
+      width: 24%;
+      /* border: 1px solid teal; */
+    }
+    .imgdiv img {
+      width: 100%;
+      height: 100%;
+    }
+    .descdiv {
+      width: 50%;
+      /* border: 1px solid teal; */
+    }
+    .descdiv span {
+      background-color: green;
+      padding: 3px;
+      border-radius: 4px;
+      color: white;
+    }
+    .pricediv {
+      width: 22%;
+      /* border: 1px solid teal; */
+      font-weight: bolder;
+      font-size: 22px;
+    }
+    .pricediv img {
+      width: 77px;
+      height: 22px;
+    }
+    .category input {
+      margin: 20px;
+    }
+    #sc {
+      margin-top: 20px;
+    }
+    .box {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      height: 300px;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .box:hover {
+      border: 2px solid grey;
+    }
+
+    #spinner {
+      visibility: hidden;
+      width: 80px;
+      height: 80px;
+
+      border: 2px solid #f3f3f3;
+      border-top: 3px solid #f25a41;
+      border-radius: 100%;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      animation: spin 1s infinite linear;
+      padding: 20px;
+    }
+
+    /* @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    } */
+
+    #spinner.show {
+      visibility: visible;
+    }
+  </style>
+  <body>
+    <div id="spinner">Please Wait</div>
+
+    <header></header>
+    <div class="second-header">
+      <span
+        >Electronics
+        <i class="fas fa-sort-down"></i>
+      </span>
+      <span>TVs & Appliances<i class="fas fa-sort-down"></i></span>
+      <span>Men<i class="fas fa-sort-down"></i></span>
+      <span>Women<i class="fas fa-sort-down"></i></span>
+      <span>Baby & Kids<i class="fas fa-sort-down"></i></span>
+      <span>Home & Furniture<i class="fas fa-sort-down"></i></span>
+      <span>Sports Bookds and more<i class="fas fa-sort-down"></i></span>
+      <span>Flight<i class="fas fa-sort-down"></i></span>
+      <span>Offer Zone<i class="fas fa-sort-down"></i></span>
+    </div>
+
+    <!-- container -->
+    <section>
+      <div class="container">
+        <!-- <div class="left-box"> -->
+        <div class="left-box">
+          <h3>Filter</h3>
+
+          <div class="category">
+            <h4 id="sc">Select category</h4>
+            <form>
+              <label for="all">
+                <input type="checkbox" id="all" name="accept" value="yes" />
+                All
+              </label>
+              <br />
+              <label for="dc">
+                <input type="checkbox" id="dc" name="accept" value="yes" />
+                Digital camera
+              </label>
+              <br />
+              <label for="hp">
+                <input type="checkbox" id="hp" name="accept" value="yes" />
+                Headphones
+              </label>
+              <br />
+              <label for="tv">
+                <input type="checkbox" id="tv" name="accept" value="yes" />
+                Tv s
+              </label>
+              <br />
+              <label for="ha">
+                <input type="checkbox" id="ha" name="accept" value="yes" />
+                Home Audio
+              </label>
+            </form>
+          </div>
+        </div>
+
+        <div class="righ-box">
+          <div class="right-box-header"></div>
+          <div class="display-items"></div>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+</html>
+<script type="module">
+  import { navbar, footer } from "../Components/nav_foot.js";
+  import { showitems } from "../JS/scripts/display.js";
+  let header = document.querySelector("header");
+  header.innerHTML = navbar();
+  let foot = document.querySelector("footer");
+  foot.innerHTML = footer();
+  let cart_ids_arr = JSON.parse(localStorage.getItem("skuarray")) || [];
+  let item_cart = document.getElementById("cart-item");
+  let len = cart_ids_arr.length;
+  item_cart.textContent = len;
+
+  let displaybox = document.querySelector(".display-items");
+
+  starting();
+
+  function starting() {
+    setTimeout(() => {
+      showitems("abcat0401000");
+    }, 1000);
+    setTimeout(() => {
+      showitems("abcat0204000");
+    }, 2000);
+    setTimeout(() => {
+      showitems("pcmcat241600050001");
+    }, 3000);
+    setTimeout(() => {
+      showitems("abcat0101000");
+    }, 5000);
+  }
+
+  //camera category
+  var dc = document.querySelector("#dc");
+  var hp = document.querySelector("#hp");
+  var tv = document.querySelector("#tv");
+  var ha = document.querySelector("#ha");
+  var all = document.querySelector("#all");
+
+  all.addEventListener("change", function () {
+    clear(hp, tv, ha, dc);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      starting();
+    } else {
+    }
+  });
+
+  dc.addEventListener("change", function () {
+    clear(hp, tv, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0401000");
+    } else {
+    }
+  });
+
+  //Headpone category
+  hp.addEventListener("change", function () {
+    clear(dc, tv, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0204000");
+    } else {
+    }
+  });
+  tv.addEventListener("change", function () {
+    clear(hp, dc, ha, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("abcat0101000");
+    } else {
+    }
+  });
+
+  ha.addEventListener("change", function () {
+    clear(tv, dc, hp, all);
+
+    if (this.checked) {
+      displaybox.innerHTML = "";
+      showitems("pcmcat241600050001");
+    } else {
+    }
+  });
+
+  function clear(a, b, c, d) {
+    a.checked = false;
+    b.checked = false;
+    c.checked = false;
+    d.checked = false;
+  }
+</script>
