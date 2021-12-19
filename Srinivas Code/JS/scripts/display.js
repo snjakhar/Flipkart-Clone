@@ -12,7 +12,7 @@ function hideSpinner() {
 
 
 async function showitems(id) {
-  let url = `https://api.bestbuy.com/v1/products((categoryPath.id=${id}))?apiKey=3b1upy8OYY1QZCEFx6LVDJgT&sort=customerReviewAverage.asc&show=customerReviewAverage,features.feature,salePrice,image,name,sku&pageSize=1&format=json`;
+  let url = `https://api.bestbuy.com/v1/products((categoryPath.id=${id}))?apiKey=3b1upy8OYY1QZCEFx6LVDJgT&sort=customerReviewAverage.asc&show=customerReviewAverage,features.feature,salePrice,image,name,sku&pageSize=10&format=json`;
   let displaybox = document.querySelector(".display-items");
   let data;
   showSpinner();
