@@ -108,7 +108,9 @@
           <footer></footer>
         </div>
       </div>
-      <div id="right-container"></div>
+      <div id="right-container">
+             <h3>Total Payable amount <span id="spn1"></span></h3>
+      </div>
     </div>
   </body>
 </html>
@@ -123,4 +125,17 @@
   let btn = document.getElementById("save-and-delivery-here").addEventListener("click", function(){
     alert("Details Saved Succesfully.......")
   })
+
+
+   
+
+  let total=JSON.parse(localStorage.getItem('total_amount'));
+  console.log(total);
+
+  document.getElementById("spn1").textContent = "₹ "+total
+
+ document.addEventListener("click",function(){
+   localStorage.clear("total_amount")
+ })
+  
 </script>
