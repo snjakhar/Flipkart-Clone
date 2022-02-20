@@ -45,21 +45,19 @@
 ---
 
 - **Home Page**
-![image](https://user-images.githubusercontent.com/93506518/154397542-eb3f441c-9198-4d50-8a37-52d2b291ccad.png)
-![image](https://user-images.githubusercontent.com/93506518/154397606-c2401c23-c3f3-404b-8280-8bfe4b12ac8b.png)
+![image](https://user-images.githubusercontent.com/93506518/154827318-9f883174-9625-4412-91b2-6dff40df19be.png)
 
-- **Furniture Page**
-![image](https://user-images.githubusercontent.com/93506518/154397681-edd56732-5f29-4906-b638-250ac7300945.png)
+- **Electronic Page**
+![image](https://user-images.githubusercontent.com/93506518/154827328-ebc471a6-528a-4417-963e-f0b21b4bfc4e.png)
 
-- **Product Page**
-![image](https://user-images.githubusercontent.com/93506518/154397728-331dae75-69f3-4751-9e47-4910c2548728.png)
-![image](https://user-images.githubusercontent.com/93506518/154397756-ac7ea5dc-a022-4c60-9eb7-404225350648.png)
+- **Electronic Items Detail Page**
+![image](https://user-images.githubusercontent.com/93506518/154827343-d4fe695c-cafa-4b21-a0ae-cf98b83a4598.png)
+
+- **Trending Items page**
+![image](https://user-images.githubusercontent.com/93506518/154827357-8d9a66bf-c1bf-47fd-ad13-eea42352d231.png)
 
 - **Cart Page**
-![image](https://user-images.githubusercontent.com/93506518/154397798-33b9f4d3-f892-4939-8087-84e009635da1.png)
+![image](https://user-images.githubusercontent.com/93506518/154827365-2e39e778-48b1-4b0a-853a-2d3a6c4cf660.png)
 
-- **SIgnIn Signup Page**
-![image](https://user-images.githubusercontent.com/93506518/154397829-8592cff9-f975-4fe9-978e-824ff3b9cce1.png)
-
-- **Payment Page**
-![image](https://user-images.githubusercontent.com/93506518/154397906-5e5f53ce-f768-4fea-a008-8697e7d71892.png)
+- **Payment & User address page**
+![image](https://user-images.githubusercontent.com/93506518/154827373-1a1381ff-2fda-4ab3-80ef-1d5a7ec12f9a.png)
